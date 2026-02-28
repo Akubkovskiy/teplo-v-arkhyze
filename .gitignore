@@ -1,29 +1,4 @@
-# Python
-__pycache__/
-*.pyc
-
-# Virtual environment
-venv/
-
-# Environment variables
+frontend/node_modules/
+frontend/.next/
+api/.venv/
 .env
-
-# Google credentials
-google-credentials.json
-
-# Database files
-*.db
-*.db-journal
-
-# Debug and temporary files
-debug_*.py
-check_*.py
-*.txt
-*.log
-
-# VS Code
-.vscode/
-
-# OS files
-.DS_Store
-Thumbs.db
