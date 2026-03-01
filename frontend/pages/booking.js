@@ -28,7 +28,10 @@ export default function BookingPage() {
   return (
     <Layout title="Бронирование">
       <AnimatedSection className="card booking-form">
-        <p style={{ marginTop: 0 }}>Оставьте заявку — подтвердим доступность и свяжемся с вами.</p>
+        <p style={{ marginTop: 0 }}>
+          Оставьте заявку — подтвердим доступность и свяжемся с вами.
+          Обычно отвечаем в течение 10–30 минут в рабочее время.
+        </p>
         <div className="booking-banner">
           <img src="/images/hero-mountains-3.jpg" alt="Вид на горы рядом с базой" />
         </div>

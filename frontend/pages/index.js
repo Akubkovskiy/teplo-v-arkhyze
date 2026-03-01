@@ -29,8 +29,12 @@ export default function Home() {
         <h2 style={{marginTop:0}}>Атмосфера Архыза</h2>
         <p>
           Утренний воздух, хвойный лес, тишина и горные виды — то, за чем возвращаются снова.
-          На следующих этапах добавим полноценные фото-блоки и отзывы гостей.
         </p>
+        <div className="photo-strip" style={{marginTop:10}}>
+          <img src="/images/hero-mountains-2.jpg" alt="Панорама гор" />
+          <img src="/images/house-winter-1.jpg" alt="Домик базы" />
+          <img src="/images/interior-dining-1.jpg" alt="Интерьер домика" />
+        </div>
       </AnimatedSection>
     </Layout>
   );
