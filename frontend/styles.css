@@ -1,4 +1,36 @@
 * { box-sizing: border-box; }
-html, body, #__next { margin: 0; padding: 0; }
-label { display: block; font-size: 13px; opacity: 0.9; }
-select, input, textarea { font: inherit; }
+html, body, #__next { margin: 0; padding: 0; font-family: Inter, system-ui, sans-serif; background: #0b1220; color: #e5e7eb; }
+a { color: #93c5fd; text-decoration: none; }
+
+.site-header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(8px); background: rgba(11,18,32,.8); border-bottom: 1px solid rgba(148,163,184,.2); }
+.site-footer { margin-top: 32px; border-top: 1px solid rgba(148,163,184,.2); color: #94a3b8; }
+.container { max-width: 1120px; margin: 0 auto; padding: 16px; }
+.row { display: flex; }
+.between { justify-content: space-between; }
+.center { align-items: center; }
+.brand { color: #fff; font-weight: 700; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.nav-link { color: #cbd5e1; font-size: 14px; padding: 6px 8px; border-radius: 8px; }
+.nav-link:hover { background: rgba(255,255,255,.08); }
+.page-title { margin: 12px 0 18px; }
+
+.card { background: rgba(255,255,255,.05); border: 1px solid rgba(148,163,184,.25); border-radius: 16px; padding: 18px; }
+.hero { margin-top: 10px; }
+.hero h1 { margin: 0 0 10px; font-size: 42px; line-height: 1.1; }
+.hero p { margin: 0 0 14px; opacity: .92; max-width: 760px; }
+.hero-actions { display: flex; gap: 10px; }
+.btn-primary, .btn-secondary { display: inline-block; padding: 10px 14px; border-radius: 10px; font-weight: 600; }
+.btn-primary { background: linear-gradient(90deg,#22c55e,#16a34a); color: #fff; }
+.btn-secondary { background: rgba(255,255,255,.1); color: #fff; }
+
+.grid3 { margin-top: 14px; display: grid; gap: 12px; grid-template-columns: repeat(3,1fr); }
+.booking-form { max-width: 680px; }
+.booking-form label { display: block; font-size: 13px; color: #cbd5e1; margin-top: 8px; }
+.booking-form input, .booking-form select, .booking-form textarea { width: 100%; margin-top: 4px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(148,163,184,.4); background: rgba(255,255,255,.08); color: #fff; }
+.booking-form button { margin-top: 12px; padding: 11px 14px; border: 0; border-radius: 10px; background: linear-gradient(90deg,#22c55e,#16a34a); color: #fff; font-weight: 700; cursor: pointer; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+@media (max-width: 900px) {
+  .grid3 { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 32px; }
+}
