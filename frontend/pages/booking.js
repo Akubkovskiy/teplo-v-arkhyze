@@ -29,6 +29,9 @@ export default function BookingPage() {
     <Layout title="Бронирование">
       <AnimatedSection className="card booking-form">
         <p style={{ marginTop: 0 }}>Оставьте заявку — подтвердим доступность и свяжемся с вами.</p>
+        <div className="booking-banner">
+          <img src="/images/hero-mountains-3.jpg" alt="Вид на горы рядом с базой" />
+        </div>
         <form onSubmit={submit}>
           <label>Домик</label>
           <select value={form.house_id} onChange={(e) => setForm({ ...form, house_id: e.target.value })}>

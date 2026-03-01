@@ -24,6 +24,8 @@ a { color: #93c5fd; text-decoration: none; }
 .card-hover { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .card-hover:hover { transform: translateY(-4px); border-color: rgba(147,197,253,.55); box-shadow: 0 10px 24px rgba(2,6,23,.35); }
 .hero { margin-top: 10px; overflow: hidden; position: relative; }
+.hero-media { margin: -18px -18px 14px; height: 280px; overflow: hidden; border-radius: 16px 16px 12px 12px; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05) contrast(1.03); }
 .hero-mountain::after {
   content: "";
   position: absolute;
@@ -41,7 +43,10 @@ a { color: #93c5fd; text-decoration: none; }
 .btn-secondary { background: rgba(255,255,255,.1); color: #fff; }
 
 .grid3 { margin-top: 14px; display: grid; gap: 12px; grid-template-columns: repeat(3,1fr); }
-.booking-form { max-width: 680px; }
+.booking-form { max-width: 760px; }
+.booking-banner { margin: 8px 0 14px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(148,163,184,.35); }
+.booking-banner img { width: 100%; display: block; max-height: 260px; object-fit: cover; }
+.house-thumb { width: 100%; border-radius: 12px; max-height: 230px; object-fit: cover; border: 1px solid rgba(148,163,184,.25); }
 .booking-form label { display: block; font-size: 13px; color: #cbd5e1; margin-top: 8px; }
 .booking-form input, .booking-form select, .booking-form textarea { width: 100%; margin-top: 4px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(148,163,184,.4); background: rgba(255,255,255,.08); color: #fff; }
 .booking-form button { margin-top: 12px; padding: 11px 14px; border: 0; border-radius: 10px; background: linear-gradient(90deg,#22c55e,#16a34a); color: #fff; font-weight: 700; cursor: pointer; }

@@ -6,6 +6,9 @@ export default function Home() {
   return (
     <Layout>
       <AnimatedSection className="hero card hero-mountain">
+        <div className="hero-media">
+          <img src="/images/hero-mountains-1.jpg" alt="Горы Архыза" />
+        </div>
         <h1>База отдыха «Тепло» · Архыз</h1>
         <p>
           Домики в лесу с видом на горы, тишина, уют и всё необходимое для отдыха.

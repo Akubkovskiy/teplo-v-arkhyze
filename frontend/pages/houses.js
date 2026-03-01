@@ -26,14 +26,29 @@ export default function HousesPage() {
       </AnimatedSection>
 
       <AnimatedSection className="grid2" style={{ marginTop: 14 }}>
-        {houses.map((h) => (
+        {houses.map((h, idx) => (
           <article className="card card-hover" key={h.name}>
-            <h3 style={{ marginTop: 0 }}>{h.name}</h3>
+            <img
+              src={idx === 0 ? "/images/house-winter-1.jpg" : "/images/interior-dining-1.jpg"}
+              alt={h.name}
+              className="house-thumb"
+            />
+            <h3 style={{ marginTop: 12 }}>{h.name}</h3>
             <p>{h.text}</p>
             <p>👥 {h.guests}</p>
             <p>💰 {h.price}</p>
           </article>
         ))}
+      </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Что есть в домиках</h3>
+        <ul>
+          <li>Wi‑Fi и горячая вода</li>
+          <li>Постельное бельё и полотенца</li>
+          <li>Кухонная зона и посуда</li>
+          <li>Мангальная зона и парковка</li>
+        </ul>
       </AnimatedSection>
     </Layout>
   );
