@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
+import AnimatedSection from "../components/AnimatedSection";
 
 const API = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8001";
 
@@ -26,22 +27,25 @@ export default function BookingPage() {
 
   return (
     <Layout title="Бронирование">
-      <form onSubmit={submit} className="card booking-form">
-        <label>Домик</label>
-        <select value={form.house_id} onChange={(e) => setForm({ ...form, house_id: e.target.value })}>
-          {houses.map((h) => <option key={h.id} value={h.id}>{h.name} · {h.base_price} ₽</option>)}
-        </select>
-        <label>Имя</label><input required value={form.guest_name} onChange={(e) => setForm({ ...form, guest_name: e.target.value })} />
-        <label>Телефон</label><input required value={form.guest_phone} onChange={(e) => setForm({ ...form, guest_phone: e.target.value })} />
-        <div className="grid2">
-          <div><label>Заезд</label><input type="date" required value={form.check_in} onChange={(e) => setForm({ ...form, check_in: e.target.value })} /></div>
-          <div><label>Выезд</label><input type="date" required value={form.check_out} onChange={(e) => setForm({ ...form, check_out: e.target.value })} /></div>
-        </div>
-        <label>Гостей</label><input type="number" min={1} max={20} value={form.guests_count} onChange={(e) => setForm({ ...form, guests_count: e.target.value })} />
-        <label>Комментарий</label><textarea rows={3} value={form.guest_comment} onChange={(e) => setForm({ ...form, guest_comment: e.target.value })} />
-        <button type="submit">Отправить заявку</button>
-        {result ? <p>{result}</p> : null}
-      </form>
+      <AnimatedSection className="card booking-form">
+        <p style={{ marginTop: 0 }}>Оставьте заявку — подтвердим доступность и свяжемся с вами.</p>
+        <form onSubmit={submit}>
+          <label>Домик</label>
+          <select value={form.house_id} onChange={(e) => setForm({ ...form, house_id: e.target.value })}>
+            {houses.map((h) => <option key={h.id} value={h.id}>{h.name} · {h.base_price} ₽</option>)}
+          </select>
+          <label>Имя</label><input required value={form.guest_name} onChange={(e) => setForm({ ...form, guest_name: e.target.value })} />
+          <label>Телефон</label><input required value={form.guest_phone} onChange={(e) => setForm({ ...form, guest_phone: e.target.value })} />
+          <div className="grid2">
+            <div><label>Заезд</label><input type="date" required value={form.check_in} onChange={(e) => setForm({ ...form, check_in: e.target.value })} /></div>
+            <div><label>Выезд</label><input type="date" required value={form.check_out} onChange={(e) => setForm({ ...form, check_out: e.target.value })} /></div>
+          </div>
+          <label>Гостей</label><input type="number" min={1} max={20} value={form.guests_count} onChange={(e) => setForm({ ...form, guests_count: e.target.value })} />
+          <label>Комментарий</label><textarea rows={3} value={form.guest_comment} onChange={(e) => setForm({ ...form, guest_comment: e.target.value })} />
+          <button type="submit">Отправить заявку</button>
+          {result ? <p>{result}</p> : null}
+        </form>
+      </AnimatedSection>
     </Layout>
   );
 }

@@ -1,10 +1,16 @@
 import Layout from "../components/Layout";
+import AnimatedSection from "../components/AnimatedSection";
 
 export default function ContactsPage() {
   return (
     <Layout title="Контакты и как добраться">
-      <p>КЧР, Зеленчукский район, с. Архыз.</p>
-      <p>На следующем этапе добавим подробный маршрут и карту.</p>
+      <AnimatedSection className="card">
+        <p>📍 Карачаево-Черкесская Республика, Зеленчукский район, с. Архыз.</p>
+        <p>
+          До базы ведёт асфальтированная дорога. На следующем этапе добавим карту и детальный маршрут
+          с видео/подсказками по подъезду.
+        </p>
+      </AnimatedSection>
     </Layout>
   );
 }
