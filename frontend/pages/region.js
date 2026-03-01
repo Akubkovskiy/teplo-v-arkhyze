@@ -11,28 +11,19 @@ export default function RegionPage() {
         </p>
       </AnimatedSection>
 
+      <AnimatedSection className="region-hero" style={{ marginTop: 14 }}>
+        <img src="/images/hero-mountains-3.jpg" alt="Панорама Архыза" />
+      </AnimatedSection>
+
       <AnimatedSection className="grid2" style={{ marginTop: 14 }}>
         <article className="card card-hover">
           <h3 style={{ marginTop: 0 }}>Летом</h3>
-          <p>
-            Пешеходные маршруты, альпийские луга, панорамные точки, фотопрогулки и выезды на природу.
-          </p>
+          <p>Походы, альпийские луга, панорамные точки, фотопрогулки и выезды на природу.</p>
         </article>
         <article className="card card-hover">
           <h3 style={{ marginTop: 0 }}>Зимой</h3>
-          <p>
-            Горнолыжный курорт Архыз, сноуборд, инструкторы, прокат и уютный вечер в тёплом домике после катания.
-          </p>
+          <p>Горнолыжный курорт Архыз, сноуборд, инструкторы, прокат и уютный вечер в домике.</p>
         </article>
-      </AnimatedSection>
-
-      <AnimatedSection className="card" style={{ marginTop: 14 }}>
-        <h3 style={{ marginTop: 0 }}>Почему гостям нравится Архыз</h3>
-        <ul>
-          <li>Чистый горный воздух и тишина</li>
-          <li>Красивые виды в любое время года</li>
-          <li>Возможность совместить активность и спокойный отдых</li>
-        </ul>
       </AnimatedSection>
     </Layout>
   );
