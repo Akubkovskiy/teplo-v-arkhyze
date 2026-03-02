@@ -29,6 +29,22 @@ export default function ActivitiesPage() {
           </article>
         ))}
       </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Как выбрать активность</h3>
+        <ul>
+          <li><b>Спокойный формат:</b> прогулки и панорамы, без перегруза.</li>
+          <li><b>Семейный формат:</b> лёгкие маршруты и короткие выезды.</li>
+          <li><b>Динамичный формат:</b> квадро/зимние активности с инструктором.</li>
+        </ul>
+      </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <div className="hero-actions">
+          <a className="btn-secondary" href="/contacts">Уточнить детали</a>
+          <a className="btn-primary" href="/booking">Оставить заявку</a>
+        </div>
+      </AnimatedSection>
     </Layout>
   );
 }

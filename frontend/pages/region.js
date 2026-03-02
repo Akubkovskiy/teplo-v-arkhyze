@@ -25,6 +25,21 @@ export default function RegionPage() {
           <p>Горнолыжный курорт Архыз, сноуборд, инструкторы, прокат и уютный вечер в домике.</p>
         </article>
       </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Когда лучше ехать</h3>
+        <p>
+          Если нужен активный outdoor — выбирайте период с устойчивой погодой и длинным световым днём.
+          Для спокойного формата и атмосферных вечеров подойдёт межсезонье с меньшим потоком гостей.
+        </p>
+      </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <div className="hero-actions">
+          <a className="btn-secondary" href="/activities">Смотреть активности</a>
+          <a className="btn-primary" href="/booking">Выбрать даты</a>
+        </div>
+      </AnimatedSection>
     </Layout>
   );
 }
