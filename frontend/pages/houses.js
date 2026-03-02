@@ -53,7 +53,15 @@ export default function HousesPage() {
           <li>Постельное бельё и полотенца</li>
           <li>Кухонная зона и посуда</li>
           <li>Мангальная зона и парковка</li>
+          <li>Лесная атмосфера и видовые точки рядом с базой</li>
         </ul>
+      </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Подбор по формату отдыха</h3>
+        <p style={{ marginBottom: 8 }}><b>Пара / спокойный отдых:</b> компактный домик, приватность и тихий режим.</p>
+        <p style={{ marginBottom: 8 }}><b>Семья:</b> семейный домик с двумя спальнями и удобной зоной отдыха.</p>
+        <p style={{ margin: 0 }}><b>Компания друзей:</b> домик с удобным общим пространством и мангальной зоной.</p>
       </AnimatedSection>
     </Layout>
   );
