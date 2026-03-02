@@ -5,18 +5,22 @@ const reviews = [
   {
     text: "Уютно, тихо, чисто. Очень красивый вид и приятная атмосфера.",
     who: "Гости из Ростова",
+    source: "Яндекс Путешествия",
   },
   {
     text: "Отдыхали семьёй — комфортно, тепло и всё необходимое в домике есть.",
     who: "Семья с детьми",
+    source: "Яндекс Путешествия",
   },
   {
     text: "Понравилось расположение: лес, горы и ощущение уединения.",
     who: "Пара, выходные",
+    source: "Яндекс Путешествия",
   },
   {
     text: "Хороший интернет, удобная парковка и классная мангальная зона.",
     who: "Компания друзей",
+    source: "Яндекс Путешествия",
   },
 ];
 
@@ -35,6 +39,7 @@ export default function ReviewsPage() {
           <article key={i} className="card card-hover review-card">
             <p>“{r.text}”</p>
             <small>{r.who}</small>
+            <small style={{ display: "block", opacity: 0.75, marginTop: 4 }}>Источник: {r.source}</small>
           </article>
         ))}
       </AnimatedSection>
