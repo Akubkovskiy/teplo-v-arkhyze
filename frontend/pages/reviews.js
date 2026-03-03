@@ -22,6 +22,16 @@ const reviews = [
     who: "Компания друзей",
     source: "Яндекс Путешествия",
   },
+  {
+    text: "Заселение прошло быстро, домик тёплый, вечером особенно красиво с подсветкой.",
+    who: "Гости, зимний заезд",
+    source: "Яндекс Путешествия",
+  },
+  {
+    text: "Удобная база для выездов по Архызу: днём активности, вечером спокойный отдых.",
+    who: "Пара, 3 дня",
+    source: "Яндекс Путешествия",
+  },
 ];
 
 export default function ReviewsPage() {
@@ -50,6 +60,15 @@ export default function ReviewsPage() {
           <img src="/images/hero-mountains-2.jpg" alt="Горы Архыза" />
           <img src="/images/house-winter-1.jpg" alt="Домик зимой" />
           <img src="/images/interior-dining-1.jpg" alt="Интерьер домика" />
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Готовы подобрать даты?</h3>
+        <p style={{ marginTop: 0 }}>Оставьте заявку — подберём подходящий домик и формат отдыха под ваш состав и сезон.</p>
+        <div className="hero-actions">
+          <a className="btn-primary" href="/booking">Перейти к бронированию</a>
+          <a className="btn-secondary" href="/contacts">Задать вопрос</a>
         </div>
       </AnimatedSection>
     </Layout>
