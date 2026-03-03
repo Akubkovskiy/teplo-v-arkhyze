@@ -32,6 +32,21 @@ export default function ContactsPage() {
       </AnimatedSection>
 
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Ориентиры по маршруту</h3>
+        <ul>
+          <li>Двигайтесь в сторону с. Архыз по основной трассе без своротов на грунтовые дороги.</li>
+          <li>За 15-20 минут до прибытия свяжитесь с администратором — подтвердим точку въезда.</li>
+          <li>После бронирования отправляем точный pin и финальную схему подъезда.</li>
+        </ul>
+      </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Контакты</h3>
+        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Telegram:</b> <a href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">@Alexey_kubkovskiy</a></p>
+        <p style={{ marginTop: 0, marginBottom: 0 }}><b>Email:</b> <a href="mailto:teploarkhyz@gmail.com">teploarkhyz@gmail.com</a></p>
+      </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
         <h3 style={{ marginTop: 0 }}>Быстрые кнопки</h3>
         <div className="hero-actions">
           <a className="btn-secondary" href="https://yandex.ru/maps/?text=%D0%90%D1%80%D1%85%D1%8B%D0%B7" target="_blank" rel="noreferrer">Открыть карту</a>
