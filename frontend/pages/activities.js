@@ -30,6 +30,17 @@ export default function ActivitiesPage() {
         ))}
       </AnimatedSection>
 
+      <AnimatedSection className="grid2" style={{ marginTop: 14 }}>
+        <article className="card card-hover">
+          <h3 style={{ marginTop: 0 }}>Лето</h3>
+          <p>Треккинг, конные прогулки, панорамные точки и спокойные выезды по окрестностям Архыза.</p>
+        </article>
+        <article className="card card-hover">
+          <h3 style={{ marginTop: 0 }}>Зима</h3>
+          <p>Горнолыжный формат, инструкторы, прокат и вечерний отдых в тёплом домике после активного дня.</p>
+        </article>
+      </AnimatedSection>
+
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
         <h3 style={{ marginTop: 0 }}>Как выбрать активность</h3>
         <ul>
@@ -37,6 +48,10 @@ export default function ActivitiesPage() {
           <li><b>Семейный формат:</b> лёгкие маршруты и короткие выезды.</li>
           <li><b>Динамичный формат:</b> квадро/зимние активности с инструктором.</li>
         </ul>
+        <p style={{ marginBottom: 0 }}>
+          Часть активностей организуется через партнёров и инструкторов по предварительному согласованию.
+          Подберём доступные варианты под даты, состав гостей и уровень подготовки.
+        </p>
       </AnimatedSection>
 
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
