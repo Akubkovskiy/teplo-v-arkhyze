@@ -64,6 +64,18 @@ export default function HousesPage() {
         <p style={{ marginBottom: 8 }}><b>Семья:</b> семейный домик с двумя спальнями и удобной зоной отдыха.</p>
         <p style={{ margin: 0 }}><b>Компания друзей:</b> домик с удобным общим пространством и мангальной зоной.</p>
       </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Галерея домиков</h3>
+        <div className="photo-strip" style={{ marginTop: 10 }}>
+          <img src="/images/house-winter-1.jpg" alt="Домик зимой" />
+          <img src="/images/interior-dining-1.jpg" alt="Гостиная и обеденная зона" />
+          <img src="/images/interior-bath-1.jpg" alt="Санузел" />
+          <img src="/images/hero-mountains-1.jpg" alt="Вид на горы" />
+          <img src="/images/hero-mountains-2.jpg" alt="Атмосфера Архыза" />
+          <img src="/images/hero-mountains-3.jpg" alt="Панорама региона" />
+        </div>
+      </AnimatedSection>
     </Layout>
   );
 }
