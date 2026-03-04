@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 
 const API = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8001";
 
 export default function BookingPage() {
+  const router = useRouter();
   const [houses, setHouses] = useState([]);
   const [form, setForm] = useState({ house_id: "", guest_name: "", guest_phone: "", check_in: "", check_out: "", guests_count: 2, guest_comment: "" });
   const [result, setResult] = useState("");
@@ -12,10 +14,18 @@ export default function BookingPage() {
 
   useEffect(() => {
     fetch(`${API}/houses`).then((r) => r.json()).then((data) => {
-      setHouses(data || []);
-      if (data?.[0]?.id) setForm((f) => ({ ...f, house_id: String(data[0].id) }));
+      const list = data || [];
+      setHouses(list);
+
+      const qsHouse = Number(router.query.house);
+      if (qsHouse && list[qsHouse - 1]?.id) {
+        setForm((f) => ({ ...f, house_id: String(list[qsHouse - 1].id) }));
+        return;
+      }
+
+      if (list?.[0]?.id) setForm((f) => ({ ...f, house_id: String(list[0].id) }));
     });
-  }, []);
+  }, [router.query.house]);
 
   async function submit(e) {
     e.preventDefault();

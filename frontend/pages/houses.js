@@ -30,18 +30,19 @@ export default function HousesPage() {
     <Layout title="Домики">
       <AnimatedSection className="card">
         <p style={{ margin: 0 }}>
-          Для каждого домика добавим отдельную фотогалерею и детальную комплектацию. Ниже — актуальные карточки с базовой информацией.
+          Ниже — финальные карточки по каждому домику: формат размещения, базовые удобства и быстрый выбор для бронирования. Отдельную расширенную галерею по каждому домику добавим после финального фото-пакета.
         </p>
       </AnimatedSection>
 
       <AnimatedSection className="grid3" style={{ marginTop: 14 }}>
-        {houses.map((h) => (
+        {houses.map((h, idx) => (
           <article className="card card-hover" key={h.name}>
             <img src={h.img} alt={h.name} className="house-thumb" />
             <h3 style={{ marginTop: 12 }}>{h.name}</h3>
             <p>{h.text}</p>
             <p>👥 {h.guests}</p>
             <p>💰 {h.price}</p>
+            <a className="btn-primary" href={`/booking?house=${idx + 1}`}>Выбрать этот домик</a>
           </article>
         ))}
       </AnimatedSection>
