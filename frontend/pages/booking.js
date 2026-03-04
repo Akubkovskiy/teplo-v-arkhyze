@@ -72,7 +72,8 @@ export default function BookingPage() {
           {error ? <p style={{ color: "#fca5a5" }}>⚠️ {error}</p> : null}
           {result ? <p>{result}</p> : null}
           <div className="hero-actions" style={{ marginTop: 8 }}>
-            <a className="btn-secondary" href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">Написать в Telegram</a>
+            <a className="btn-primary" href="https://t.me/Claw_kub_bot?start=booking" target="_blank" rel="noreferrer">Перейти в бот бронирования</a>
+            <a className="btn-secondary" href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">Связаться с администратором</a>
           </div>
         </form>
       </AnimatedSection>
