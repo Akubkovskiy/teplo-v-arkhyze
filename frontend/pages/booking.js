@@ -8,6 +8,7 @@ export default function BookingPage() {
   const [houses, setHouses] = useState([]);
   const [form, setForm] = useState({ house_id: "", guest_name: "", guest_phone: "", check_in: "", check_out: "", guests_count: 2, guest_comment: "" });
   const [result, setResult] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch(`${API}/houses`).then((r) => r.json()).then((data) => {
@@ -18,8 +19,26 @@ export default function BookingPage() {
 
   async function submit(e) {
     e.preventDefault();
+    setError("");
+
+    const phone = (form.guest_phone || "").replace(/[\s\-()]/g, "");
+    if (!/^\+?\d{10,15}$/.test(phone)) {
+      setError("Введите корректный телефон: только цифры, можно с + в начале.");
+      return;
+    }
+
+    if (form.check_in && form.check_out && form.check_out <= form.check_in) {
+      setError("Дата выезда должна быть позже даты заезда.");
+      return;
+    }
+
     setResult("Отправка...");
-    const payload = { ...form, house_id: form.house_id ? Number(form.house_id) : null, guests_count: Number(form.guests_count) };
+    const payload = {
+      ...form,
+      guest_phone: phone,
+      house_id: form.house_id ? Number(form.house_id) : null,
+      guests_count: Number(form.guests_count)
+    };
     const r = await fetch(`${API}/booking-requests`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
     const data = await r.json();
     setResult(r.ok ? `✅ Заявка отправлена (#${data.id})` : `❌ ${data.detail || "Ошибка"}`);
@@ -41,7 +60,8 @@ export default function BookingPage() {
             {houses.map((h) => <option key={h.id} value={h.id}>{h.name} · {h.base_price} ₽</option>)}
           </select>
           <label>Имя</label><input required value={form.guest_name} onChange={(e) => setForm({ ...form, guest_name: e.target.value })} />
-          <label>Телефон</label><input required value={form.guest_phone} onChange={(e) => setForm({ ...form, guest_phone: e.target.value })} />
+          <label>Телефон</label>
+          <input required placeholder="+79991234567" value={form.guest_phone} onChange={(e) => setForm({ ...form, guest_phone: e.target.value })} />
           <div className="grid2">
             <div><label>Заезд</label><input type="date" required value={form.check_in} onChange={(e) => setForm({ ...form, check_in: e.target.value })} /></div>
             <div><label>Выезд</label><input type="date" required value={form.check_out} onChange={(e) => setForm({ ...form, check_out: e.target.value })} /></div>
@@ -49,7 +69,11 @@ export default function BookingPage() {
           <label>Гостей</label><input type="number" min={1} max={20} value={form.guests_count} onChange={(e) => setForm({ ...form, guests_count: e.target.value })} />
           <label>Комментарий</label><textarea rows={3} value={form.guest_comment} onChange={(e) => setForm({ ...form, guest_comment: e.target.value })} />
           <button type="submit">Отправить заявку</button>
+          {error ? <p style={{ color: "#fca5a5" }}>⚠️ {error}</p> : null}
           {result ? <p>{result}</p> : null}
+          <div className="hero-actions" style={{ marginTop: 8 }}>
+            <a className="btn-secondary" href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">Написать в Telegram</a>
+          </div>
         </form>
       </AnimatedSection>
     </Layout>
