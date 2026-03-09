@@ -4,7 +4,7 @@ import AnimatedSection from "../components/AnimatedSection";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout description="3 домика для 2–6 гостей рядом с Архызом. Wi-Fi, кухня, мангал, парковка. До курорта Романтик — 15 минут. Бронируйте онлайн.">
       <AnimatedSection className="hero card hero-mountain">
         <div className="hero-media">
           <img src="/images/hero-mountains-1.jpg" alt="Горы Архыза" />

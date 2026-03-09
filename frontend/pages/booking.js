@@ -38,7 +38,7 @@ export default function BookingPage() {
   if (sent) {
     const h = houses.find((x) => x.id === form.house) || houses[0];
     return (
-      <Layout title="Бронирование">
+      <Layout title="Бронирование" description="Забронируйте домик на базе «Тепло» рядом с Архызом. Выберите даты и оставьте заявку — ответим в течение 30 минут.">
         <AnimatedSection className="card">
           <h2 style={{ marginTop: 0 }}>Спасибо за заявку!</h2>
           <p>Домик: <b>{h.name}</b></p>
@@ -54,7 +54,7 @@ export default function BookingPage() {
   }
 
   return (
-    <Layout title="Бронирование">
+    <Layout title="Бронирование" description="Забронируйте домик на базе «Тепло» рядом с Архызом. Выберите даты и оставьте заявку — ответим в течение 30 минут.">
       <AnimatedSection className="card booking-form">
         <p style={{ marginTop: 0 }}>
           Оставьте заявку — подтвердим доступность и свяжемся с вами.

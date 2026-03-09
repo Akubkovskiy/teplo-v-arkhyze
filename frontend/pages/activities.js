@@ -12,7 +12,7 @@ const items = [
 
 export default function ActivitiesPage() {
   return (
-    <Layout title="Чем заняться в Архызе">
+    <Layout title="Чем заняться" description="Треккинг, конные прогулки, квадроциклы, горнолыжный курорт Романтик и спокойный отдых у базы «Тепло» рядом с Архызом.">
       <AnimatedSection className="card">
         <p style={{ margin: 0 }}>
           Архыз — это не только горнолыжный сезон. Летом здесь треккинг, конные прогулки, панорамы и чистый воздух,

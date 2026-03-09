@@ -36,7 +36,7 @@ const reviews = [
 
 export default function ReviewsPage() {
   return (
-    <Layout title="Отзывы гостей">
+    <Layout title="Отзывы гостей" description="Отзывы гостей базы отдыха «Тепло» рядом с Архызом. Реальные впечатления о домиках, природе и сервисе.">
       <AnimatedSection className="card">
         <p style={{ margin: 0 }}>
           Ниже — реальные впечатления гостей о тишине, чистоте, видах и атмосфере базы «Тепло».

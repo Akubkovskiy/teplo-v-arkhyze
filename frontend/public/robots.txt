@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://teplo-v-arkhyze.ru/sitemap.xml

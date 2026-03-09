@@ -3,7 +3,7 @@ import AnimatedSection from "../components/AnimatedSection";
 
 export default function RegionPage() {
   return (
-    <Layout title="О регионе Архыз">
+    <Layout title="О регионе" description="Архыз — горный регион Карачаево-Черкесии: хвойные леса, чистый воздух, панорамы Кавказа. База «Тепло» расположена рядом.">
       <AnimatedSection className="card">
         <p>
           Архыз — горный регион Карачаево-Черкесии с хвойными лесами, чистым воздухом и панорамами Кавказских вершин.

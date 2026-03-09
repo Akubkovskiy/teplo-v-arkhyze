@@ -4,7 +4,7 @@ import cfg from "../site.config";
 
 export default function ContactsPage() {
   return (
-    <Layout title="Контакты и как добраться">
+    <Layout title="Контакты и как добраться" description="Контакты базы «Тепло» рядом с Архызом: телефон, Telegram, координаты для навигатора и ссылки на карты.">
       <AnimatedSection className="card">
         <p><b>📍 Локация:</b> Карачаево-Черкесская Республика, рядом с Архызом.</p>
         <p>
