@@ -44,7 +44,7 @@ export default function BookingPage() {
           <p>Даты: <b>{form.check_in} — {form.check_out}</b></p>
           <p>Для быстрого подтверждения свяжитесь с нами:</p>
           <div className="hero-actions">
-            <a className="btn-primary" href="https://t.me/Claw_kub_bot?start=booking" target="_blank" rel="noreferrer">Бот бронирования</a>
+            <a className="btn-primary" href="https://t.me/TeploCampBot?start=booking" target="_blank" rel="noreferrer">Бот бронирования</a>
             <a className="btn-secondary" href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">Написать администратору</a>
           </div>
         </AnimatedSection>
@@ -79,7 +79,7 @@ export default function BookingPage() {
           <button type="submit">Отправить заявку</button>
           {error ? <p style={{ color: "#fca5a5" }}>⚠️ {error}</p> : null}
           <div className="hero-actions" style={{ marginTop: 8 }}>
-            <a className="btn-primary" href="https://t.me/Claw_kub_bot?start=booking" target="_blank" rel="noreferrer">Перейти в бот бронирования</a>
+            <a className="btn-primary" href="https://t.me/TeploCampBot?start=booking" target="_blank" rel="noreferrer">Перейти в бот бронирования</a>
             <a className="btn-secondary" href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">Связаться с администратором</a>
           </div>
         </form>

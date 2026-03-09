@@ -48,7 +48,7 @@ export default function ContactsPage() {
 
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
         <h3 style={{ marginTop: 0 }}>Контакты</h3>
-        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Telegram-бот:</b> <a href="https://t.me/Claw_kub_bot" target="_blank" rel="noreferrer">@Claw_kub_bot</a></p>
+        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Telegram-бот:</b> <a href="https://t.me/TeploCampBot" target="_blank" rel="noreferrer">@TeploCampBot</a></p>
         <p style={{ marginTop: 0, marginBottom: 8 }}><b>Telegram администратора:</b> <a href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">@Alexey_kubkovskiy</a></p>
         <p style={{ marginTop: 0, marginBottom: 8 }}><b>Телефон:</b> <a href="tel:+79251279722">+7 925 127-97-22</a></p>
         <p style={{ marginTop: 0, marginBottom: 0 }}><b>Email:</b> <a href="mailto:teploarkhyz@gmail.com">teploarkhyz@gmail.com</a></p>
