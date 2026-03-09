@@ -8,8 +8,14 @@ export default function ContactsPage() {
         <p><b>📍 Локация:</b> Карачаево-Черкесская Республика, рядом с Архызом.</p>
         <p>
           База расположена в спокойной локации, немного в стороне от посёлка. До подъезда ведёт асфальтированная дорога.
-          После бронирования отправим координаты и схему подъезда.
         </p>
+        <p style={{ marginBottom: 4 }}><b>Координаты для навигатора:</b></p>
+        <code style={{ display: "inline-block", padding: "8px 14px", background: "rgba(255,255,255,0.08)", borderRadius: 8, fontSize: 16, letterSpacing: 1, userSelect: "all", cursor: "pointer" }}>43.560731, 41.284236</code>
+        <div style={{ display: "flex", gap: 10, marginTop: 10, flexWrap: "wrap" }}>
+          <a className="btn-secondary" style={{ fontSize: 14 }} href="https://yandex.ru/maps/?pt=41.284236,43.560731&z=15&l=map" target="_blank" rel="noreferrer">Яндекс Карты</a>
+          <a className="btn-secondary" style={{ fontSize: 14 }} href="https://www.google.com/maps?q=43.560731,41.284236" target="_blank" rel="noreferrer">Google Maps</a>
+          <a className="btn-secondary" style={{ fontSize: 14 }} href="https://2gis.ru/geo/41.284236,43.560731" target="_blank" rel="noreferrer">2ГИС</a>
+        </div>
       </AnimatedSection>
 
       <AnimatedSection className="grid2" style={{ marginTop: 14 }}>
@@ -51,7 +57,7 @@ export default function ContactsPage() {
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
         <h3 style={{ marginTop: 0 }}>Быстрые кнопки</h3>
         <div className="hero-actions">
-          <a className="btn-secondary" href="https://yandex.ru/maps/?text=%D0%90%D1%80%D1%85%D1%8B%D0%B7" target="_blank" rel="noreferrer">Открыть карту</a>
+          <a className="btn-secondary" href="https://yandex.ru/maps/?pt=41.284236,43.560731&z=15&l=map" target="_blank" rel="noreferrer">Открыть карту</a>
           <a className="btn-primary" href="/booking">Оставить заявку</a>
         </div>
       </AnimatedSection>
