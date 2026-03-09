@@ -4,11 +4,11 @@ import cfg from "../site.config";
 
 export default function ContactsPage() {
   return (
-    <Layout title="Контакты и как добраться" description="Контакты базы «Тепло» рядом с Архызом: телефон, Telegram, координаты для навигатора и ссылки на карты.">
+    <Layout title="Контакты и как добраться" description="Контакты базы «Тепло» в Архызе: телефон, Telegram, координаты для навигатора и ссылки на карты.">
       <AnimatedSection className="card">
-        <p><b>📍 Локация:</b> Карачаево-Черкесская Республика, рядом с Архызом.</p>
+        <p><b>📍 Локация:</b> Карачаево-Черкесская Республика, Архыз.</p>
         <p>
-          База расположена в спокойной локации, немного в стороне от посёлка. До подъезда ведёт асфальтированная дорога.
+          База расположена в лесу, в стороне от посёлка — без шума дорог и суеты. До подъезда ведёт асфальтированная дорога.
         </p>
         <p style={{ marginBottom: 4 }}><b>Координаты для навигатора:</b></p>
         <code style={{ display: "inline-block", padding: "8px 14px", background: "rgba(255,255,255,0.08)", borderRadius: 8, fontSize: 16, letterSpacing: 1, userSelect: "all", cursor: "pointer" }}>{cfg.coords.lat}, {cfg.coords.lon}</code>

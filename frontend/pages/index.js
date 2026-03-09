@@ -4,15 +4,15 @@ import AnimatedSection from "../components/AnimatedSection";
 
 export default function Home() {
   return (
-    <Layout description="3 домика для 2–6 гостей рядом с Архызом. Wi-Fi, кухня, мангал, парковка. До курорта Романтик — 15 минут. Бронируйте онлайн.">
+    <Layout description="Домики в лесу, в стороне от посёлка. Без шума и суеты — тишина, горы и чистый воздух. 3 домика на 2–6 гостей, до курорта 15 минут.">
       <AnimatedSection className="hero card hero-mountain">
         <div className="hero-media">
           <img src="/images/hero-mountains-1.jpg" alt="Горы Архыза" />
         </div>
-        <h1>База отдыха «Тепло» рядом с Архызом</h1>
+        <h1>База отдыха «Тепло» в Архызе</h1>
         <p>
-          3 отдельных домика для 2–6 гостей в спокойной локации, немного в стороне от посёлка.
-          Wi-Fi, кухня, мангал, парковка. До курорта — 15 минут.
+          Домики в лесу, в стороне от посёлка — без шума дорог и суеты.
+          Только тишина, горы и чистый воздух. 3 домика на 2–6 гостей, до курорта Романтик — 15 минут.
         </p>
         <div className="hero-actions">
           <Link href="/booking" className="btn-primary">Забронировать</Link>

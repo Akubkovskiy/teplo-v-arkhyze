@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 
-const SITE_NAME = "Тепло — база отдыха рядом с Архызом";
-const DEFAULT_DESC = "Уютные домики для 2–6 гостей рядом с Архызом. Wi-Fi, кухня, мангал, парковка. До курорта — 15 минут. Бронируйте онлайн.";
+const SITE_NAME = "Тепло — база отдыха в Архызе";
+const DEFAULT_DESC = "Домики в лесу, в стороне от посёлка. Без шума и суеты — только тишина, горы и чистый воздух. 3 домика на 2–6 гостей, до курорта 15 минут.";
 const SITE_URL = "https://teplo-v-arkhyze.ru";
 const OG_IMAGE = `${SITE_URL}/images/hero-mountains-1.jpg`;
 
