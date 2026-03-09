@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
+import cfg from "../site.config";
 
 export default function ContactsPage() {
   return (
@@ -10,11 +11,11 @@ export default function ContactsPage() {
           База расположена в спокойной локации, немного в стороне от посёлка. До подъезда ведёт асфальтированная дорога.
         </p>
         <p style={{ marginBottom: 4 }}><b>Координаты для навигатора:</b></p>
-        <code style={{ display: "inline-block", padding: "8px 14px", background: "rgba(255,255,255,0.08)", borderRadius: 8, fontSize: 16, letterSpacing: 1, userSelect: "all", cursor: "pointer" }}>43.560731, 41.284236</code>
+        <code style={{ display: "inline-block", padding: "8px 14px", background: "rgba(255,255,255,0.08)", borderRadius: 8, fontSize: 16, letterSpacing: 1, userSelect: "all", cursor: "pointer" }}>{cfg.coords.lat}, {cfg.coords.lon}</code>
         <div style={{ display: "flex", gap: 10, marginTop: 10, flexWrap: "wrap" }}>
-          <a className="btn-secondary" style={{ fontSize: 14 }} href="https://yandex.ru/maps/?pt=41.284236,43.560731&z=15&l=map" target="_blank" rel="noreferrer">Яндекс Карты</a>
-          <a className="btn-secondary" style={{ fontSize: 14 }} href="https://www.google.com/maps?q=43.560731,41.284236" target="_blank" rel="noreferrer">Google Maps</a>
-          <a className="btn-secondary" style={{ fontSize: 14 }} href="https://2gis.ru/geo/41.284236,43.560731" target="_blank" rel="noreferrer">2ГИС</a>
+          <a className="btn-secondary" style={{ fontSize: 14 }} href={cfg.yandexMapUrl} target="_blank" rel="noreferrer">Яндекс Карты</a>
+          <a className="btn-secondary" style={{ fontSize: 14 }} href={cfg.googleMapUrl} target="_blank" rel="noreferrer">Google Maps</a>
+          <a className="btn-secondary" style={{ fontSize: 14 }} href={cfg.gisMapUrl} target="_blank" rel="noreferrer">2ГИС</a>
         </div>
       </AnimatedSection>
 
@@ -48,16 +49,16 @@ export default function ContactsPage() {
 
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
         <h3 style={{ marginTop: 0 }}>Контакты</h3>
-        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Telegram-бот:</b> <a href="https://t.me/TeploCampBot" target="_blank" rel="noreferrer">@TeploCampBot</a></p>
-        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Telegram администратора:</b> <a href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">@Alexey_kubkovskiy</a></p>
-        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Телефон:</b> <a href="tel:+79251279722">+7 925 127-97-22</a></p>
-        <p style={{ marginTop: 0, marginBottom: 0 }}><b>Email:</b> <a href="mailto:teploarkhyz@gmail.com">teploarkhyz@gmail.com</a></p>
+        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Telegram-бот:</b> <a href={cfg.botUrl} target="_blank" rel="noreferrer">@{cfg.botUsername}</a></p>
+        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Telegram администратора:</b> <a href={cfg.adminUrl} target="_blank" rel="noreferrer">@{cfg.adminTelegram}</a></p>
+        <p style={{ marginTop: 0, marginBottom: 8 }}><b>Телефон:</b> <a href={cfg.phoneHref}>{cfg.phone}</a></p>
+        <p style={{ marginTop: 0, marginBottom: 0 }}><b>Email:</b> <a href={cfg.emailHref}>{cfg.email}</a></p>
       </AnimatedSection>
 
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
         <h3 style={{ marginTop: 0 }}>Быстрые кнопки</h3>
         <div className="hero-actions">
-          <a className="btn-secondary" href="https://yandex.ru/maps/?pt=41.284236,43.560731&z=15&l=map" target="_blank" rel="noreferrer">Открыть карту</a>
+          <a className="btn-secondary" href={cfg.yandexMapUrl} target="_blank" rel="noreferrer">Открыть карту</a>
           <a className="btn-primary" href="/booking">Оставить заявку</a>
         </div>
       </AnimatedSection>
