@@ -1,33 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 
-const API = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8001";
+const houses = [
+  { id: 1, name: "Домик в лесу 34 м²", price: "от 5 000 ₽/сутки" },
+  { id: 2, name: "Семейный домик 40 м²", price: "от 7 000 ₽/сутки" },
+  { id: 3, name: "Компактный домик 32 м²", price: "по запросу" },
+];
 
 export default function BookingPage() {
   const router = useRouter();
-  const [houses, setHouses] = useState([]);
-  const [form, setForm] = useState({ house_id: "", guest_name: "", guest_phone: "", check_in: "", check_out: "", guests_count: 2, guest_comment: "" });
-  const [result, setResult] = useState("");
+  const qsHouse = Number(router.query.house) || 1;
+  const [form, setForm] = useState({ house: qsHouse, guest_name: "", guest_phone: "", check_in: "", check_out: "", guests_count: 2, comment: "" });
+  const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    fetch(`${API}/houses`).then((r) => r.json()).then((data) => {
-      const list = data || [];
-      setHouses(list);
-
-      const qsHouse = Number(router.query.house);
-      if (qsHouse && list[qsHouse - 1]?.id) {
-        setForm((f) => ({ ...f, house_id: String(list[qsHouse - 1].id) }));
-        return;
-      }
-
-      if (list?.[0]?.id) setForm((f) => ({ ...f, house_id: String(list[0].id) }));
-    });
-  }, [router.query.house]);
-
-  async function submit(e) {
+  function submit(e) {
     e.preventDefault();
     setError("");
 
@@ -42,16 +31,25 @@ export default function BookingPage() {
       return;
     }
 
-    setResult("Отправка...");
-    const payload = {
-      ...form,
-      guest_phone: phone,
-      house_id: form.house_id ? Number(form.house_id) : null,
-      guests_count: Number(form.guests_count)
-    };
-    const r = await fetch(`${API}/booking-requests`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
-    const data = await r.json();
-    setResult(r.ok ? `✅ Заявка отправлена (#${data.id})` : `❌ ${data.detail || "Ошибка"}`);
+    setSent(true);
+  }
+
+  if (sent) {
+    const h = houses.find((x) => x.id === form.house) || houses[0];
+    return (
+      <Layout title="Бронирование">
+        <AnimatedSection className="card">
+          <h2 style={{ marginTop: 0 }}>Спасибо за заявку!</h2>
+          <p>Домик: <b>{h.name}</b></p>
+          <p>Даты: <b>{form.check_in} — {form.check_out}</b></p>
+          <p>Для быстрого подтверждения свяжитесь с нами:</p>
+          <div className="hero-actions">
+            <a className="btn-primary" href="https://t.me/Claw_kub_bot?start=booking" target="_blank" rel="noreferrer">Бот бронирования</a>
+            <a className="btn-secondary" href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">Написать администратору</a>
+          </div>
+        </AnimatedSection>
+      </Layout>
+    );
   }
 
   return (
@@ -66,8 +64,8 @@ export default function BookingPage() {
         </div>
         <form onSubmit={submit}>
           <label>Домик</label>
-          <select value={form.house_id} onChange={(e) => setForm({ ...form, house_id: e.target.value })}>
-            {houses.map((h) => <option key={h.id} value={h.id}>{h.name} · {h.base_price} ₽</option>)}
+          <select value={form.house} onChange={(e) => setForm({ ...form, house: Number(e.target.value) })}>
+            {houses.map((h) => <option key={h.id} value={h.id}>{h.name} · {h.price}</option>)}
           </select>
           <label>Имя</label><input required value={form.guest_name} onChange={(e) => setForm({ ...form, guest_name: e.target.value })} />
           <label>Телефон</label>
@@ -77,10 +75,9 @@ export default function BookingPage() {
             <div><label>Выезд</label><input type="date" required value={form.check_out} onChange={(e) => setForm({ ...form, check_out: e.target.value })} /></div>
           </div>
           <label>Гостей</label><input type="number" min={1} max={20} value={form.guests_count} onChange={(e) => setForm({ ...form, guests_count: e.target.value })} />
-          <label>Комментарий</label><textarea rows={3} value={form.guest_comment} onChange={(e) => setForm({ ...form, guest_comment: e.target.value })} />
+          <label>Комментарий</label><textarea rows={3} value={form.comment} onChange={(e) => setForm({ ...form, comment: e.target.value })} />
           <button type="submit">Отправить заявку</button>
           {error ? <p style={{ color: "#fca5a5" }}>⚠️ {error}</p> : null}
-          {result ? <p>{result}</p> : null}
           <div className="hero-actions" style={{ marginTop: 8 }}>
             <a className="btn-primary" href="https://t.me/Claw_kub_bot?start=booking" target="_blank" rel="noreferrer">Перейти в бот бронирования</a>
             <a className="btn-secondary" href="https://t.me/Alexey_kubkovskiy" target="_blank" rel="noreferrer">Связаться с администратором</a>
