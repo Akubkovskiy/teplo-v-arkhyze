@@ -34,6 +34,15 @@ class BookingRequest(Base):
     source: Mapped[str] = mapped_column(String(32), nullable=False, default="website")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
+    # S10.2 forward в EasyCamp. Все поля nullable — в существующем
+    # production Postgres NEW столбцы добавляются через ALTER TABLE
+    # (см. docs/SITE_BOOKING_ROADMAP.md). Без них сервис продолжает
+    # работать как раньше — поля игнорируются.
+    forwarded_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    forwarded_status: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    easycamp_booking_id: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
+    forward_error: Mapped[str | None] = mapped_column(Text, nullable=True)
+
 
 class AdminAuditLog(Base):
     __tablename__ = "admin_audit_logs"

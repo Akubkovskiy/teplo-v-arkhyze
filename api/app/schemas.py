@@ -44,6 +44,8 @@ class BookingRequestOut(BaseModel):
     status: str
     source: str
     created_at: datetime
+    forwarded_status: str | None = None
+    easycamp_booking_id: int | None = None
 
     class Config:
         from_attributes = True

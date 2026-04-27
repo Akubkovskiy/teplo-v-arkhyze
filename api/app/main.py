@@ -1,12 +1,17 @@
+import logging
+from datetime import datetime
+
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
 from .database import Base, engine, get_db
+from .easycamp_forward import forward_lead
 from .models import House, BookingRequest
 from .schemas import HouseOut, BookingRequestCreate, BookingRequestOut
 
-app = FastAPI(title="Teplo API", version="0.3.0")
+logger = logging.getLogger(__name__)
+app = FastAPI(title="Teplo API", version="0.4.0")
 
 
 @app.on_event("startup")
@@ -53,7 +58,11 @@ def list_houses(db: Session = Depends(get_db)):
 
 
 @app.post("/booking-requests", response_model=BookingRequestOut)
-def create_booking_request(payload: BookingRequestCreate, db: Session = Depends(get_db)):
+async def create_booking_request(
+    payload: BookingRequestCreate, db: Session = Depends(get_db)
+):
+    """Создаёт локальный лид + best-effort forward в EasyCamp."""
+    house: House | None = None
     if payload.house_id:
         house = db.get(House, payload.house_id)
         if not house:
@@ -73,6 +82,35 @@ def create_booking_request(payload: BookingRequestCreate, db: Session = Depends(
     db.add(req)
     db.commit()
     db.refresh(req)
+
+    # Forward в EasyCamp. Не валит ответ при ошибке — лид уже сохранён
+    # локально, владелец может найти его в site Postgres и/или
+    # ретрай-job (Phase S11) подберёт его позже.
+    forward_payload = {
+        "guest_name": req.guest_name,
+        "guest_phone": req.guest_phone,
+        "check_in": req.check_in.isoformat(),
+        "check_out": req.check_out.isoformat(),
+        "guests_count": req.guests_count,
+        "house_name": house.name if house else None,
+        "comment": req.guest_comment,
+        "source": "website",
+        "external_ref": str(req.id),
+    }
+    result = await forward_lead(forward_payload)
+
+    req.forwarded_status = result.status
+    req.forwarded_at = datetime.utcnow()
+    if result.status == "ok":
+        req.easycamp_booking_id = result.booking_id
+        req.forward_error = None
+    elif result.status == "error":
+        req.forward_error = (result.error or "")[:1000]
+    else:
+        req.forward_error = None
+    db.commit()
+    db.refresh(req)
+
     return req
 
 
