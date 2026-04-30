@@ -27,8 +27,14 @@ services:
     environment:
       - DATABASE_URL=${DATABASE_URL:-postgresql+psycopg://teplo:teplo@db:5432/teplo}
       - APP_ENV=dev
+      - EASYCAMP_LEAD_URL=${EASYCAMP_LEAD_URL:-}
+      - EASYCAMP_LEAD_TOKEN=${EASYCAMP_LEAD_TOKEN:-}
+      - EASYCAMP_LEAD_TIMEOUT_SECONDS=${EASYCAMP_LEAD_TIMEOUT_SECONDS:-5}
     ports:
       - "127.0.0.1:8001:8001"
+    networks:
+      - default
+      - easycamp
     depends_on:
       - db
 
@@ -42,6 +48,11 @@ services:
       - teplo_db_data:/var/lib/postgresql/data
     ports:
       - "127.0.0.1:5433:5432"
+
+networks:
+  easycamp:
+    name: easycamp-bot_default
+    external: true
 
 volumes:
   teplo_db_data:
