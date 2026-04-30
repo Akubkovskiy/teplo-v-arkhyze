@@ -22,6 +22,7 @@ class BookingRequestCreate(BaseModel):
     check_in: date
     check_out: date
     guests_count: int = Field(default=2, ge=1, le=20)
+    website: str | None = Field(default=None, max_length=500)  # honeypot
 
     @field_validator("check_out")
     @classmethod

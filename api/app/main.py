@@ -1,28 +1,30 @@
 import logging
+from contextlib import asynccontextmanager
 from datetime import datetime
 
-from fastapi import FastAPI, Depends, HTTPException
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from fastapi import FastAPI, Depends, HTTPException, Request
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
-from .database import Base, engine, get_db
+from .database import get_db
 from .easycamp_forward import forward_lead
 from .models import House, BookingRequest
+from .retry_job import retry_failed_forwards
 from .schemas import HouseOut, BookingRequestCreate, BookingRequestOut
 
 logger = logging.getLogger(__name__)
-app = FastAPI(title="Teplo API", version="0.4.0")
+limiter = Limiter(key_func=get_remote_address)
 
 
-@app.on_event("startup")
-def startup():
-    Base.metadata.create_all(bind=engine)
-
-    # Seed demo houses for MVP (idempotent)
+@asynccontextmanager
+async def lifespan(app):
     db = next(get_db())
     try:
-        houses_count = db.query(House).count()
-        if houses_count == 0:
+        if db.query(House).count() == 0:
             db.add_all(
                 [
                     House(
@@ -45,6 +47,20 @@ def startup():
     finally:
         db.close()
 
+    scheduler = AsyncIOScheduler()
+    scheduler.add_job(retry_failed_forwards, "interval", seconds=300, id="retry_forwards")
+    scheduler.start()
+    logger.info("retry_forwards job scheduled (every 300s)")
+
+    yield
+
+    scheduler.shutdown(wait=False)
+
+
+app = FastAPI(title="Teplo API", version="0.5.0", lifespan=lifespan)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
 
 @app.get("/health")
 async def health():
@@ -52,16 +68,28 @@ async def health():
 
 
 @app.get("/houses", response_model=list[HouseOut])
-def list_houses(db: Session = Depends(get_db)):
+@limiter.limit("30/minute")
+def list_houses(request: Request, db: Session = Depends(get_db)):
     stmt = select(House).order_by(House.id)
     return list(db.execute(stmt).scalars().all())
 
 
 @app.post("/booking-requests", response_model=BookingRequestOut)
+@limiter.limit("5/minute")
 async def create_booking_request(
-    payload: BookingRequestCreate, db: Session = Depends(get_db)
+    request: Request, payload: BookingRequestCreate, db: Session = Depends(get_db)
 ):
     """Создаёт локальный лид + best-effort forward в EasyCamp."""
+    if payload.website:
+        logger.info("honeypot triggered, discarding submission")
+        return BookingRequestOut(
+            id=0, house_id=payload.house_id, guest_name=payload.guest_name,
+            guest_phone=payload.guest_phone, guest_comment=payload.guest_comment,
+            check_in=payload.check_in, check_out=payload.check_out,
+            guests_count=payload.guests_count, status="new", source="website",
+            created_at=datetime.utcnow(),
+        )
+
     house: House | None = None
     if payload.house_id:
         house = db.get(House, payload.house_id)
@@ -83,9 +111,6 @@ async def create_booking_request(
     db.commit()
     db.refresh(req)
 
-    # Forward в EasyCamp. Не валит ответ при ошибке — лид уже сохранён
-    # локально, владелец может найти его в site Postgres и/или
-    # ретрай-job (Phase S11) подберёт его позже.
     forward_payload = {
         "guest_name": req.guest_name,
         "guest_phone": req.guest_phone,

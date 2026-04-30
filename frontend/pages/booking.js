@@ -30,6 +30,7 @@ export default function BookingPage() {
     guests_count: 2,
     comment: "",
   });
+  const [honeypot, setHoneypot] = useState("");
   const [sent, setSent] = useState(false);
   const [leadId, setLeadId] = useState(null);
   const [error, setError] = useState("");
@@ -48,6 +49,11 @@ export default function BookingPage() {
 
     if (form.check_in && form.check_out && form.check_out <= form.check_in) {
       setError("Дата выезда должна быть позже даты заезда.");
+      return;
+    }
+
+    if (honeypot) {
+      setSent(true);
       return;
     }
 
@@ -221,6 +227,15 @@ export default function BookingPage() {
             value={form.comment}
             onChange={(e) => setForm({ ...form, comment: e.target.value })}
             disabled={loading}
+          />
+          <input
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            style={{ position: "absolute", left: "-9999px", opacity: 0 }}
+            aria-hidden="true"
           />
           <button type="submit" disabled={loading}>
             {loading ? "Отправляем…" : "Отправить заявку"}

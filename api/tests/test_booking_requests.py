@@ -1,13 +1,13 @@
-"""Site API tests — booking-requests endpoint with EasyCamp forward.
-
-Mounts the route handler onto a fresh FastAPI app instead of importing
-`app.main:app`, чтобы не триггерить startup-хук с
-`Base.metadata.create_all(bind=engine)` против реального Postgres."""
+"""Site API tests — booking-requests endpoint with EasyCamp forward,
+honeypot, and rate-limit."""
 from datetime import date, timedelta
 
 import pytest
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, Request
 from fastapi.testclient import TestClient
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session as OrmSession
 from sqlalchemy.pool import StaticPool
@@ -19,26 +19,23 @@ from app.schemas import BookingRequestCreate, BookingRequestOut
 
 
 def _build_test_app():
-    """Минимальный FastAPI app с одним обработчиком, который проксирует
-    вызов в `main.create_booking_request` — это сохраняет логику
-    forward + персистентность, но не таскает FastAPI startup-события.
-    """
     app = FastAPI()
+    limiter = Limiter(key_func=get_remote_address)
+    app.state.limiter = limiter
+    app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
     @app.post("/booking-requests", response_model=BookingRequestOut)
+    @limiter.limit("100/minute")
     async def _route(
-        payload: BookingRequestCreate, db: OrmSession = Depends(get_db)
+        request: Request, payload: BookingRequestCreate, db: OrmSession = Depends(get_db)
     ):
-        return await main_module.create_booking_request(payload, db)
+        return await main_module.create_booking_request(request, payload, db)
 
     return app
 
 
 @pytest.fixture
 def db_session():
-    # StaticPool + check_same_thread=False — единственное соединение,
-    # переиспользуется всеми сессиями. Без него каждая сессия создаёт
-    # свою in-memory БД и не видит созданные таблицы.
     engine = create_engine(
         "sqlite+pysqlite:///:memory:",
         connect_args={"check_same_thread": False},
@@ -97,16 +94,8 @@ def _payload(**overrides):
 
 @pytest.mark.asyncio
 async def test_create_lead_when_forward_disabled(client, db_session, monkeypatch):
-    """Если EASYCAMP_LEAD_URL не задан — лид всё равно сохранён, статус
-    forwarded_status='disabled'."""
-
     async def fake_forward(payload):
         return easycamp_forward.ForwardResult(status="disabled")
-
-    monkeypatch.setattr(easycamp_forward, "forward_lead", fake_forward)
-    # main.py делает `from .easycamp_forward import forward_lead` — это
-    # привязка по имени, нужно патчить и в main module.
-    from app import main as main_module
 
     monkeypatch.setattr(main_module, "forward_lead", fake_forward)
 
@@ -136,8 +125,6 @@ async def test_create_lead_with_successful_forward(client, db_session, monkeypat
             raw_response={"booking_id": 42, "lead_id": 42},
         )
 
-    from app import main as main_module
-
     monkeypatch.setattr(main_module, "forward_lead", fake_forward)
 
     response = client.post("/booking-requests", json=_payload())
@@ -146,7 +133,6 @@ async def test_create_lead_with_successful_forward(client, db_session, monkeypat
     assert data["forwarded_status"] == "ok"
     assert data["easycamp_booking_id"] == 42
 
-    # forward вызван с правильным payload-ом, включая house_name
     assert captured["payload"]["house_name"] == "Forest 34м²"
     assert captured["payload"]["external_ref"] == str(data["id"])
     assert captured["payload"]["source"] == "website"
@@ -159,15 +145,10 @@ async def test_create_lead_with_successful_forward(client, db_session, monkeypat
 
 @pytest.mark.asyncio
 async def test_forward_failure_does_not_fail_the_request(client, db_session, monkeypatch):
-    """Если EasyCamp ответил ошибкой — site API всё равно возвращает 200,
-    лид сохранён локально с forwarded_status='error' и forward_error."""
-
     async def fake_forward(payload):
         return easycamp_forward.ForwardResult(
             status="error", error="http 500: oops"
         )
-
-    from app import main as main_module
 
     monkeypatch.setattr(main_module, "forward_lead", fake_forward)
 
@@ -188,3 +169,20 @@ def test_unknown_house_id_returns_404(client):
         "/booking-requests", json=_payload(house_id=9999)
     )
     assert response.status_code == 404
+
+
+def test_honeypot_discards_submission(client, db_session, monkeypatch):
+    async def fake_forward(payload):
+        raise AssertionError("forward should not be called for honeypot")
+
+    monkeypatch.setattr(main_module, "forward_lead", fake_forward)
+
+    response = client.post(
+        "/booking-requests", json=_payload(website="spam-bot-value")
+    )
+    assert response.status_code == 200
+    data = response.json()
+    assert data["id"] == 0
+
+    with db_session() as s:
+        assert s.query(BookingRequest).count() == 0
