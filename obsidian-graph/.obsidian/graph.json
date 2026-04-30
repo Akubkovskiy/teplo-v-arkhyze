@@ -1,0 +1,165 @@
+{
+  "colorGroups": [
+    {
+      "query": "tag:#community/Site_API_Roadmap_Teplo_/_Teplo_Site_UI/UX_and_Deploy_Roadmap",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "tag:#community/test_booking_requests.py_/_House",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "tag:#community/Growth_Audit_Roadmap_2026-04-27_/_Marketplaces_and_SMM_Plan_Subagent",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    },
+    {
+      "query": "tag:#community/S2/S3_Page_Checklist_/_Photo_to_Page_Matrix_(v2_final_draft)",
+      "color": {
+        "a": 1,
+        "rgb": 7780274
+      }
+    },
+    {
+      "query": "tag:#community/Teplo_Glamping_Public_Website_/_API_Python_Dependencies_(requirements.txt)",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
+      }
+    },
+    {
+      "query": "tag:#community/main.py_/_easycamp_forward.py",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
+      }
+    },
+    {
+      "query": "tag:#community/Site+API_Execution_Checklist_/_API_Endpoint:_POST_/booking-requests",
+      "color": {
+        "a": 1,
+        "rgb": 11565729
+      }
+    },
+    {
+      "query": "tag:#community/Site_Booking_Roadmap_Phase_S10_/_EasyCamp_POST_/api/leads_Endpoint",
+      "color": {
+        "a": 1,
+        "rgb": 16752039
+      }
+    },
+    {
+      "query": "tag:#community/booking.js_/_normalizePhone()",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
+    },
+    {
+      "query": "tag:#community/conftest.py_/_Pytest_setup_for_site_API_tests.__Uses_in-memory_SQLite_+_FastAPI_TestClient._Ov",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    },
+    {
+      "query": "tag:#community/AnimatedSection.js_/_AnimatedSection()",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "tag:#community/Layout.js_/_Layout()",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "tag:#community/activities.js_/_ActivitiesPage()",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    },
+    {
+      "query": "tag:#community/contacts.js_/_ContactsPage()",
+      "color": {
+        "a": 1,
+        "rgb": 7780274
+      }
+    },
+    {
+      "query": "tag:#community/houses.js_/_HousesPage()",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
+      }
+    },
+    {
+      "query": "tag:#community/index.js_/_Home()",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
+      }
+    },
+    {
+      "query": "tag:#community/region.js_/_RegionPage()",
+      "color": {
+        "a": 1,
+        "rgb": 11565729
+      }
+    },
+    {
+      "query": "tag:#community/reviews.js_/_ReviewsPage()",
+      "color": {
+        "a": 1,
+        "rgb": 16752039
+      }
+    },
+    {
+      "query": "tag:#community/_app.js_/_App()",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
+    },
+    {
+      "query": "tag:#community/__init__.py",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    },
+    {
+      "query": "tag:#community/next.config.js",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "tag:#community/site.config.js",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "tag:#community/teplo-v-arkhyze_README",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    }
+  ]
+}

@@ -1,0 +1,3390 @@
+{
+  "nodes": [
+    {
+      "id": "claude_teplo_repo",
+      "label": "teplo-v-arkhyze Repo (CLAUDE.md)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claude_index",
+      "label": "teplo-v-arkhyze Index",
+      "file_type": "document",
+      "source_file": "INDEX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claude_readme",
+      "label": "teplo-v-arkhyze README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claude_status",
+      "label": "teplo-v-arkhyze Status",
+      "file_type": "document",
+      "source_file": "STATUS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-08",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project_teplo_site",
+      "label": "Teplo Glamping Public Website",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "service_frontend",
+      "label": "Next.js Frontend Service",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "service_api",
+      "label": "Python FastAPI Service",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "service_db",
+      "label": "Postgres Database Container",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "server_fi_rz4",
+      "label": "Server FI-RZ-4",
+      "file_type": "document",
+      "source_file": "STATUS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project_easycamp_teplo",
+      "label": "EasyCamp-Teplo Booking Backoffice",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_requirements",
+      "label": "API Python Dependencies (requirements.txt)",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_fastapi",
+      "label": "FastAPI 0.116.1",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_uvicorn",
+      "label": "Uvicorn 0.35.0",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_sqlalchemy",
+      "label": "SQLAlchemy 2.0.43",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_psycopg",
+      "label": "Psycopg3 (binary) 3.2.9",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_pydantic",
+      "label": "Pydantic 2.11.7",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_httpx",
+      "label": "HTTPX 0.28.1",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "arch_decision",
+      "label": "Architecture Decision (2026-02-28)",
+      "file_type": "document",
+      "source_file": "docs/ARCHITECTURE_DECISION.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-02-28",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "content_requirements",
+      "label": "Content Requirements for Launch",
+      "file_type": "document",
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-02",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "next_actions_alexey",
+      "label": "Next Actions from Alexey (Launch Finalization)",
+      "file_type": "document",
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-04",
+      "author": "Alexey",
+      "contributor": null
+    },
+    {
+      "id": "photo_audit",
+      "label": "Photo Audit Progress (2026-03-01)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-01",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "photo_page_matrix",
+      "label": "Photo to Page Matrix (v2 final draft)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-02",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "photo_production_brief",
+      "label": "Photo Production Brief (Nano Banana AI generation)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-01",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "release_checklist",
+      "label": "Release Candidate Checklist",
+      "file_type": "document",
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-04",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "s2_s3_checklist",
+      "label": "S2/S3 Page Checklist",
+      "file_type": "document",
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-01",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_api_checklist",
+      "label": "Site+API Execution Checklist",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_home",
+      "label": "Site Page: Home (/)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_houses",
+      "label": "Site Page: Houses (/houses)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_booking",
+      "label": "Site Page: Booking (/booking)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_activities",
+      "label": "Site Page: Activities (/activities)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_region",
+      "label": "Site Page: Region (/region)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_reviews",
+      "label": "Site Page: Reviews (/reviews)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_contacts",
+      "label": "Site Page: Contacts (/contacts)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_endpoint_health",
+      "label": "API Endpoint: GET /health",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_endpoint_houses",
+      "label": "API Endpoint: GET /houses",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_endpoint_booking_post",
+      "label": "API Endpoint: POST /booking-requests",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_endpoint_booking_get",
+      "label": "API Endpoint: GET /booking-requests/{id}",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "content_blocker_photo_p1",
+      "label": "Content Blocker: P1 Photo Package",
+      "file_type": "document",
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "content_blocker_cabin_params",
+      "label": "Content Blocker: Cabin Commercial Parameters",
+      "file_type": "document",
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "content_blocker_contacts",
+      "label": "Content Blocker: Public Contacts Confirmation",
+      "file_type": "document",
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "photo_yandex_disk_source",
+      "label": "Photo Source: Yandex Disk (71 files)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "cabin_third_avito",
+      "label": "Third Cabin (Avito ID 3792037514) \u2014 Missing Data",
+      "file_type": "document",
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e0",
+      "label": "Execution Stage E0: Infra baseline",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e1",
+      "label": "Execution Stage E1: Front/API/DB scaffold",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e2",
+      "label": "Execution Stage E2: API models + booking endpoint",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e3",
+      "label": "Execution Stage E3: Front booking flow",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e4",
+      "label": "Execution Stage E4: Reverse-proxy subdomain (in progress)",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e5",
+      "label": "Execution Stage E5: Admin MVP",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e6",
+      "label": "Execution Stage E6: Hardening (pending)",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e7",
+      "label": "Execution Stage E7: UAT + Launch (pending)",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_api_roadmap",
+      "label": "Site API Roadmap Teplo",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-02-28",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_booking_roadmap",
+      "label": "Site Booking Roadmap Phase S10",
+      "file_type": "document",
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-27",
+      "author": "claude-code",
+      "contributor": null
+    },
+    {
+      "id": "site_roadmap",
+      "label": "Teplo Site UI/UX and Deploy Roadmap",
+      "file_type": "document",
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-02",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "testing_stack_roadmap",
+      "label": "Testing Stack Roadmap Site and API",
+      "file_type": "document",
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_audit_roadmap",
+      "label": "Growth Audit Roadmap 2026-04-27",
+      "file_type": "document",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-27",
+      "author": "codex",
+      "contributor": null
+    },
+    {
+      "id": "growth_readme",
+      "label": "Growth Workspace README",
+      "file_type": "document",
+      "source_file": "docs/growth/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-27",
+      "author": "codex",
+      "contributor": null
+    },
+    {
+      "id": "subagent_infra_domain",
+      "label": "Infra Domain Audit Subagent",
+      "file_type": "document",
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-27",
+      "author": "codex",
+      "contributor": null
+    },
+    {
+      "id": "subagent_marketplaces_smm",
+      "label": "Marketplaces and SMM Plan Subagent",
+      "file_type": "document",
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-27",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "subagent_revenue_300k",
+      "label": "Revenue Model 300k Subagent",
+      "file_type": "document",
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-27",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "subagent_site_ux",
+      "label": "Site UX SEO Conversion Audit Subagent",
+      "file_type": "document",
+      "source_file": "docs/growth/subagents/site-ux-conversion-audit.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-27",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "robots_txt",
+      "label": "Robots.txt",
+      "file_type": "document",
+      "source_file": "frontend/public/robots.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ops_backup",
+      "label": "Ops Backup Guide",
+      "file_type": "document",
+      "source_file": "ops/backup.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ops_deploy",
+      "label": "Ops Deploy Guide",
+      "file_type": "document",
+      "source_file": "ops/deploy.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ops_restore",
+      "label": "Ops Restore Guide",
+      "file_type": "document",
+      "source_file": "ops/restore.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_e0_infra_baseline",
+      "label": "Phase E0 Infra Baseline",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E0 \u2014 Infra Baseline",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_e1_front_scaffold",
+      "label": "Phase E1 Front Scaffold",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E1 \u2014 Front scaffold",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_e2_api_scaffold",
+      "label": "Phase E2 API Scaffold",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E2 \u2014 API scaffold",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_e3_booking_flow_mvp",
+      "label": "Phase E3 Booking Flow MVP",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E3 \u2014 Booking flow MVP",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_e4_routing_domain",
+      "label": "Phase E4 Routing on Domain",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E4 \u2014 Routing on domain",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_e5_admin_mvp",
+      "label": "Phase E5 Admin MVP",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E5 \u2014 Admin MVP",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_e6_hardening",
+      "label": "Phase E6 Hardening",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E6 \u2014 Hardening",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_e7_uat_launch",
+      "label": "Phase E7 UAT and Launch",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E7 \u2014 UAT + launch",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_s10_end_to_end_booking",
+      "label": "Phase S10 End-to-End Booking",
+      "file_type": "concept",
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 1. Phase S10",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_s11_hardening",
+      "label": "Phase S11 Hardening",
+      "file_type": "concept",
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 2. Phase S11",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "phase_s12_ux_content",
+      "label": "Phase S12 UX and Content",
+      "file_type": "concept",
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 3. Phase S12",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_phase0_infra",
+      "label": "Site Phase 0 Infrastructure Stack",
+      "file_type": "concept",
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 0",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_phase1_components",
+      "label": "Site Phase 1 UI Components",
+      "file_type": "concept",
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_phase2_cabin_api",
+      "label": "Site Phase 2 Cabin Page and API",
+      "file_type": "concept",
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 2",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_phase3_seo_deploy",
+      "label": "Site Phase 3 SEO and Deploy",
+      "file_type": "concept",
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_phase4_advanced",
+      "label": "Site Phase 4 Advanced Features",
+      "file_type": "concept",
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 4",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "testing_t1_api_smoke",
+      "label": "Testing Track T1 API Smoke",
+      "file_type": "concept",
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T1 \u2014 API smoke/contract",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "testing_t2_ui_e2e",
+      "label": "Testing Track T2 UI E2E",
+      "file_type": "concept",
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T2 \u2014 UI E2E",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "testing_t3_performance",
+      "label": "Testing Track T3 Performance",
+      "file_type": "concept",
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T3 \u2014 Performance",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "testing_t4_security",
+      "label": "Testing Track T4 Security Baseline",
+      "file_type": "concept",
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T4 \u2014 Security baseline",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "testing_t5_visual_regression",
+      "label": "Testing Track T5 Visual Regression",
+      "file_type": "concept",
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T5 \u2014 Visual regression",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_phase0_freeze_risk",
+      "label": "Growth Phase 0 Freeze Risk Surface",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 0 - Freeze The Risk Surface",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_phase1_stop_losing_leads",
+      "label": "Growth Phase 1 Stop Losing Leads",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 1 - Stop Losing Leads",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_phase2_public_site_launch",
+      "label": "Growth Phase 2 Safe Public Site Launch",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 2 - Safe Public Site Launch",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_phase3_trust_conversion",
+      "label": "Growth Phase 3 Trust and Conversion Foundation",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 3 - Trust And Conversion Foundation",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_phase4_avito_sprint",
+      "label": "Growth Phase 4 Avito Growth Sprint",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 4 - Avito Growth Sprint",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_phase5_local_seo",
+      "label": "Growth Phase 5 Local SEO and Yandex",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 5 - Local SEO And Yandex",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_phase6_ota_expansion",
+      "label": "Growth Phase 6 Sutochno and OTA Expansion",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 6 - Sutochno And OTA Expansion",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "growth_phase7_bot_operator",
+      "label": "Growth Phase 7 Bot as Operator and Promotion Assistant",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 7 - Bot As Operator And Promotion Assistant",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "revenue_model_300k",
+      "label": "Revenue Model 300k Target",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "## 3. \u0413\u043b\u0430\u0432\u043d\u0430\u044f \u043c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430 \u0446\u0435\u043b\u0438 300k revenue",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pricing_ladder",
+      "label": "Pricing Ladder Three Houses",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "## 6. Pricing ladder",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "avito_channel",
+      "label": "Avito Marketplace Channel",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Avito playbook",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "yandex_business_channel",
+      "label": "Yandex Business Maps Channel",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Yandex Business / Maps",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "yandex_travel_channel",
+      "label": "Yandex Travel Channel",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Yandex Travel",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sutochno_channel",
+      "label": "Sutochno.ru Channel",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Sutochno.ru",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ostrovok_bronevik_channel",
+      "label": "Ostrovok Bronevik OTA Channel",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Ostrovok, Bronevik, and channel-manager options",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "smm_vk_telegram",
+      "label": "SMM VK and Telegram Content Calendar",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## SMM and content calendar",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vpnbot_nginx_constraint",
+      "label": "VPN Bot Nginx Port Constraint",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## 2) \u0427\u0442\u043e \u043a\u0440\u0438\u0442\u0438\u0447\u043d\u043e \u043d\u0435 \u0441\u043b\u043e\u043c\u0430\u0442\u044c",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "override_conf_deploy_strategy",
+      "label": "Override.conf Isolated Deploy Strategy",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## 3) \u0411\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u0430\u044f \u0441\u0445\u0435\u043c\u0430 \u0434\u0435\u043f\u043b\u043e\u044f",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "easycamp_source_of_truth",
+      "label": "EasyCamp Booking Source of Truth",
+      "file_type": "concept",
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 4. \u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "booking_form_p0_bug",
+      "label": "Booking Form P0 Silent Lead Loss Bug",
+      "file_type": "concept",
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 0. \u0410\u0443\u0434\u0438\u0442 booking-\u0444\u043b\u043e\u0443",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_api_forward_layer",
+      "label": "Site API Forward Layer to EasyCamp",
+      "file_type": "concept",
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "### S10.2 \u2014 Site API: forward \u0432 EasyCamp",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "easycamp_leads_endpoint",
+      "label": "EasyCamp POST /api/leads Endpoint",
+      "file_type": "concept",
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "### S10.1 \u2014 EasyCamp: POST /api/leads",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "nextjs_frontend_stack",
+      "label": "Next.js Frontend Tech Stack",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## Frontend",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "fastapi_backend_stack",
+      "label": "FastAPI Backend Tech Stack",
+      "file_type": "concept",
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## Backend/API",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "domain_teplo_v_arkhyze_ru",
+      "label": "Domain teplo-v-arkhyze.ru",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "## Domain and proxy state",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "fi_rz4_server",
+      "label": "FI-RZ-4 Production Server",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "## Current topology",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "channel_manager_decision",
+      "label": "Channel Manager Decision Bnovo TravelLine",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Ostrovok, Bronevik, and channel-manager options",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "kpi_north_star",
+      "label": "North Star KPI Confirmed Paid House-Nights",
+      "file_type": "concept",
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "## North Star And KPI",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "house_forest_34",
+      "label": "House Forest 34m2",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "## 6. Pricing ladder",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "house_family_40",
+      "label": "House Family 40m2",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "## 6. Pricing ladder",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "house_compact_32",
+      "label": "House Compact 32m2",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "## 6. Pricing ladder",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "seo_schema_org",
+      "label": "Schema.org SEO Structured Data Plan",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/site-ux-conversion-audit.md",
+      "source_location": "1. Schema.org JSON-LD",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "yandex_metrica_analytics",
+      "label": "Yandex Metrica Analytics Events Plan",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/site-ux-conversion-audit.md",
+      "source_location": "## \u0410\u043d\u0430\u043b\u0438\u0442\u0438\u043a\u0430 \u0438 \u0441\u043e\u0431\u044b\u0442\u0438\u044f",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rollback_procedure",
+      "label": "Nginx Proxy Rollback Procedure",
+      "file_type": "concept",
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "## Rollback path",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "claude_teplo_repo",
+      "target": "project_teplo_site",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "service_frontend",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "service_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "service_db",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "server_fi_rz4",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "STATUS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "project_easycamp_teplo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "arch_decision",
+      "target": "project_easycamp_teplo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/ARCHITECTURE_DECISION.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arch_decision",
+      "target": "project_teplo_site",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/ARCHITECTURE_DECISION.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "service_api",
+      "target": "api_requirements",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_fastapi",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_uvicorn",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_sqlalchemy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_psycopg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_pydantic",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_httpx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "dep_psycopg",
+      "target": "service_db",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "dep_sqlalchemy",
+      "target": "service_db",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "content_requirements",
+      "target": "cabin_third_avito",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_requirements",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_requirements",
+      "target": "page_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_requirements",
+      "target": "page_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_requirements",
+      "target": "page_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "next_actions_alexey",
+      "target": "content_blocker_photo_p1",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "next_actions_alexey",
+      "target": "content_blocker_cabin_params",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "next_actions_alexey",
+      "target": "content_blocker_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "next_actions_alexey",
+      "target": "photo_production_brief",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_blocker_photo_p1",
+      "target": "photo_production_brief",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_audit",
+      "target": "photo_yandex_disk_source",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_audit",
+      "target": "photo_page_matrix",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_home",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_activities",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_region",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_home",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_activities",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "content_blocker_photo_p1",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "page_home",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "page_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "service_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_home",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_activities",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_region",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "photo_production_brief",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "photo_page_matrix",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "api_endpoint_health",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "api_endpoint_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "api_endpoint_booking_post",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "api_endpoint_booking_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e0",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e1",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e2",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e3",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e4",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e5",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e6",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e7",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "exec_stage_e1",
+      "target": "service_frontend",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "exec_stage_e1",
+      "target": "service_api",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "exec_stage_e1",
+      "target": "service_db",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "api_endpoint_booking_post",
+      "target": "page_booking",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "api_endpoint_houses",
+      "target": "page_houses",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "release_checklist",
+      "target": "next_actions_alexey",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "release_checklist",
+      "target": "s2_s3_checklist",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "photo_audit",
+      "target": "content_requirements",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "claude_index",
+      "target": "claude_teplo_repo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "INDEX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claude_status",
+      "target": "project_teplo_site",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "STATUS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "phase_e0_infra_baseline",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E0",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "phase_e1_front_scaffold",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E1",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "phase_e2_api_scaffold",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E2",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "phase_e3_booking_flow_mvp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E3",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "phase_e4_routing_domain",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E4",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "phase_e5_admin_mvp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E5",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "phase_e6_hardening",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E6",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "phase_e7_uat_launch",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## E7",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "vpnbot_nginx_constraint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## 2",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "override_conf_deploy_strategy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## 3",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "nextjs_frontend_stack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## Frontend",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_roadmap",
+      "target": "fastapi_backend_stack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md",
+      "source_location": "## Backend/API",
+      "weight": 1.0
+    },
+    {
+      "source": "site_roadmap",
+      "target": "site_api_roadmap",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "\u0411\u0430\u0437\u043e\u0432\u044b\u0439 \u0440\u043e\u0443\u0434\u043c\u0430\u043f (E0\u2013E7, \u0438\u043d\u0444\u0440\u0430)",
+      "weight": 1.0
+    },
+    {
+      "source": "site_roadmap",
+      "target": "testing_stack_roadmap",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "\u0422\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435: TESTING_STACK_ROADMAP.md",
+      "weight": 1.0
+    },
+    {
+      "source": "site_roadmap",
+      "target": "site_phase0_infra",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 0",
+      "weight": 1.0
+    },
+    {
+      "source": "site_roadmap",
+      "target": "site_phase1_components",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 1",
+      "weight": 1.0
+    },
+    {
+      "source": "site_roadmap",
+      "target": "site_phase2_cabin_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 2",
+      "weight": 1.0
+    },
+    {
+      "source": "site_roadmap",
+      "target": "site_phase3_seo_deploy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 3",
+      "weight": 1.0
+    },
+    {
+      "source": "site_roadmap",
+      "target": "site_phase4_advanced",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "### \u0424\u0410\u0417\u0410 4",
+      "weight": 1.0
+    },
+    {
+      "source": "site_roadmap",
+      "target": "vpnbot_nginx_constraint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "server_name block",
+      "weight": 0.9
+    },
+    {
+      "source": "site_booking_roadmap",
+      "target": "phase_s10_end_to_end_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 1. Phase S10",
+      "weight": 1.0
+    },
+    {
+      "source": "site_booking_roadmap",
+      "target": "phase_s11_hardening",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 2. Phase S11",
+      "weight": 1.0
+    },
+    {
+      "source": "site_booking_roadmap",
+      "target": "phase_s12_ux_content",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 3. Phase S12",
+      "weight": 1.0
+    },
+    {
+      "source": "site_booking_roadmap",
+      "target": "easycamp_source_of_truth",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 4. \u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435",
+      "weight": 1.0
+    },
+    {
+      "source": "site_booking_roadmap",
+      "target": "booking_form_p0_bug",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "## 0. \u0410\u0443\u0434\u0438\u0442",
+      "weight": 1.0
+    },
+    {
+      "source": "site_booking_roadmap",
+      "target": "easycamp_leads_endpoint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "### S10.1",
+      "weight": 1.0
+    },
+    {
+      "source": "site_booking_roadmap",
+      "target": "site_api_forward_layer",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "### S10.2",
+      "weight": 1.0
+    },
+    {
+      "source": "site_booking_roadmap",
+      "target": "growth_audit_roadmap",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "\u0421\u0432\u044f\u0437\u0430\u043d\u043e: docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "growth_phase0_freeze_risk",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 0",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "growth_phase1_stop_losing_leads",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 1",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "growth_phase2_public_site_launch",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 2",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "growth_phase3_trust_conversion",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 3",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "growth_phase4_avito_sprint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 4",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "growth_phase5_local_seo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 5",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "growth_phase6_ota_expansion",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 6",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "growth_phase7_bot_operator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 7",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "kpi_north_star",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "## North Star",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "revenue_model_300k",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "## Revenue Model",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "subagent_infra_domain",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "subagents/infra-domain-audit.md",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "subagent_site_ux",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "subagents/site-ux-conversion-audit.md",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "subagent_marketplaces_smm",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "subagents/marketplaces-smm-plan.md",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_audit_roadmap",
+      "target": "subagent_revenue_300k",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "subagents/revenue-model-300k.md",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_readme",
+      "target": "growth_audit_roadmap",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/README.md",
+      "source_location": "## Main document",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_readme",
+      "target": "subagent_infra_domain",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/README.md",
+      "source_location": "## Subagent drafts",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_readme",
+      "target": "subagent_site_ux",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/README.md",
+      "source_location": "## Subagent drafts",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_readme",
+      "target": "subagent_marketplaces_smm",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/README.md",
+      "source_location": "## Subagent drafts",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_readme",
+      "target": "subagent_revenue_300k",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/README.md",
+      "source_location": "## Subagent drafts",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_infra_domain",
+      "target": "vpnbot_nginx_constraint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "## Shared domain and VPN risks",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_infra_domain",
+      "target": "override_conf_deploy_strategy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "## Safer rollout strategy",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_infra_domain",
+      "target": "domain_teplo_v_arkhyze_ru",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "## Domain and proxy state",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_infra_domain",
+      "target": "fi_rz4_server",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "## Current topology",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_infra_domain",
+      "target": "rollback_procedure",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "## Rollback path",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_marketplaces_smm",
+      "target": "avito_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Avito playbook",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_marketplaces_smm",
+      "target": "yandex_business_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Yandex Business / Maps",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_marketplaces_smm",
+      "target": "yandex_travel_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Yandex Travel",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_marketplaces_smm",
+      "target": "sutochno_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Sutochno.ru",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_marketplaces_smm",
+      "target": "ostrovok_bronevik_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Ostrovok, Bronevik",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_marketplaces_smm",
+      "target": "smm_vk_telegram",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## SMM and content calendar",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_marketplaces_smm",
+      "target": "channel_manager_decision",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md",
+      "source_location": "## Ostrovok, Bronevik, and channel-manager options",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_revenue_300k",
+      "target": "revenue_model_300k",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "## 3",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_revenue_300k",
+      "target": "pricing_ladder",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "## 6",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_revenue_300k",
+      "target": "house_forest_34",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "\u0414\u043e\u043c\u0438\u043a \u0432 \u043b\u0435\u0441\u0443 34 \u043c\u00b2",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_revenue_300k",
+      "target": "house_family_40",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "\u0421\u0435\u043c\u0435\u0439\u043d\u044b\u0439 \u0434\u043e\u043c\u0438\u043a 40 \u043c\u00b2",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_revenue_300k",
+      "target": "house_compact_32",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "\u041a\u043e\u043c\u043f\u0430\u043a\u0442\u043d\u044b\u0439 \u0434\u043e\u043c\u0438\u043a 32 \u043c\u00b2",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_site_ux",
+      "target": "booking_form_p0_bug",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/site-ux-conversion-audit.md",
+      "source_location": "1. \u0424\u043e\u0440\u043c\u0430 \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043d\u0435 end-to-end",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_site_ux",
+      "target": "seo_schema_org",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/site-ux-conversion-audit.md",
+      "source_location": "1. Schema.org JSON-LD",
+      "weight": 1.0
+    },
+    {
+      "source": "subagent_site_ux",
+      "target": "yandex_metrica_analytics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/site-ux-conversion-audit.md",
+      "source_location": "## \u0410\u043d\u0430\u043b\u0438\u0442\u0438\u043a\u0430 \u0438 \u0441\u043e\u0431\u044b\u0442\u0438\u044f",
+      "weight": 1.0
+    },
+    {
+      "source": "testing_stack_roadmap",
+      "target": "testing_t1_api_smoke",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T1",
+      "weight": 1.0
+    },
+    {
+      "source": "testing_stack_roadmap",
+      "target": "testing_t2_ui_e2e",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T2",
+      "weight": 1.0
+    },
+    {
+      "source": "testing_stack_roadmap",
+      "target": "testing_t3_performance",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T3",
+      "weight": 1.0
+    },
+    {
+      "source": "testing_stack_roadmap",
+      "target": "testing_t4_security",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T4",
+      "weight": 1.0
+    },
+    {
+      "source": "testing_stack_roadmap",
+      "target": "testing_t5_visual_regression",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "### T5",
+      "weight": 1.0
+    },
+    {
+      "source": "robots_txt",
+      "target": "domain_teplo_v_arkhyze_ru",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/public/robots.txt",
+      "source_location": "Sitemap: https://teplo-v-arkhyze.ru/sitemap.xml",
+      "weight": 1.0
+    },
+    {
+      "source": "ops_deploy",
+      "target": "nextjs_frontend_stack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ops/deploy.md",
+      "source_location": "frontend - Next.js app on port 3000",
+      "weight": 1.0
+    },
+    {
+      "source": "ops_deploy",
+      "target": "fastapi_backend_stack",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ops/deploy.md",
+      "source_location": "api - Python API on port 8001",
+      "weight": 1.0
+    },
+    {
+      "source": "ops_restore",
+      "target": "ops_deploy",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "ops/restore.md",
+      "source_location": "run docker compose up -d --build",
+      "weight": 0.8
+    },
+    {
+      "source": "ops_backup",
+      "target": "ops_restore",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "ops/backup.md",
+      "source_location": "Before risky work, confirm",
+      "weight": 0.8
+    },
+    {
+      "source": "growth_phase1_stop_losing_leads",
+      "target": "booking_form_p0_bug",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Connect booking form to a real backend",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase1_stop_losing_leads",
+      "target": "easycamp_source_of_truth",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Preferred path: site submits to an EasyCamp",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase2_public_site_launch",
+      "target": "override_conf_deploy_strategy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Add isolated server_name block",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase2_public_site_launch",
+      "target": "rollback_procedure",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Rollback",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase4_avito_sprint",
+      "target": "avito_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 4 - Avito Growth Sprint",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase5_local_seo",
+      "target": "yandex_business_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "### Phase 5 - Local SEO And Yandex",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase6_ota_expansion",
+      "target": "sutochno_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Sutochno.ru after Avito calendar process",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase6_ota_expansion",
+      "target": "yandex_travel_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Yandex Travel after legal/classification",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase6_ota_expansion",
+      "target": "ostrovok_bronevik_channel",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Ostrovok/Bronevik only after object type",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase6_ota_expansion",
+      "target": "channel_manager_decision",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Channel manager decision",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase7_bot_operator",
+      "target": "smm_vk_telegram",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Promotion assistant",
+      "weight": 0.8
+    },
+    {
+      "source": "easycamp_leads_endpoint",
+      "target": "easycamp_source_of_truth",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "\u0421\u043e\u0437\u0434\u0430\u0451\u043c Booking \u0447\u0435\u0440\u0435\u0437 BookingService.create_booking",
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_forward_layer",
+      "target": "easycamp_leads_endpoint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "S10.2 forward \u0432 EasyCamp",
+      "weight": 1.0
+    },
+    {
+      "source": "phase_s10_end_to_end_booking",
+      "target": "easycamp_leads_endpoint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "S10.1",
+      "weight": 1.0
+    },
+    {
+      "source": "phase_s10_end_to_end_booking",
+      "target": "site_api_forward_layer",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md",
+      "source_location": "S10.2",
+      "weight": 1.0
+    },
+    {
+      "source": "pricing_ladder",
+      "target": "house_forest_34",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "\u0414\u043e\u043c\u0438\u043a \u0432 \u043b\u0435\u0441\u0443 34 \u043c\u00b2",
+      "weight": 1.0
+    },
+    {
+      "source": "pricing_ladder",
+      "target": "house_family_40",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "\u0421\u0435\u043c\u0435\u0439\u043d\u044b\u0439 40 \u043c\u00b2",
+      "weight": 1.0
+    },
+    {
+      "source": "pricing_ladder",
+      "target": "house_compact_32",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "\u041a\u043e\u043c\u043f\u0430\u043a\u0442\u043d\u044b\u0439 32 \u043c\u00b2",
+      "weight": 1.0
+    },
+    {
+      "source": "revenue_model_300k",
+      "target": "kpi_north_star",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md",
+      "source_location": "## 7. KPI \u0434\u043b\u044f \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f",
+      "weight": 0.85
+    },
+    {
+      "source": "growth_phase3_trust_conversion",
+      "target": "seo_schema_org",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Schema.org: LocalBusiness/LodgingBusiness",
+      "weight": 1.0
+    },
+    {
+      "source": "growth_phase3_trust_conversion",
+      "target": "yandex_metrica_analytics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md",
+      "source_location": "Yandex.Metrica: events",
+      "weight": 1.0
+    },
+    {
+      "source": "fi_rz4_server",
+      "target": "vpnbot_nginx_constraint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "Public 80/443 are controlled by legacy vpnbot",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_teplo_v_arkhyze_ru",
+      "target": "fi_rz4_server",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/infra-domain-audit.md",
+      "source_location": "DNS for root and www points to FI 144.31.185.177",
+      "weight": 1.0
+    },
+    {
+      "source": "site_phase3_seo_deploy",
+      "target": "seo_schema_org",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/SITE_ROADMAP.md",
+      "source_location": "SEO \u043a\u043e\u043c\u043f\u043e\u043d\u0435\u043d\u0442",
+      "weight": 0.75
+    },
+    {
+      "source": "testing_t1_api_smoke",
+      "target": "fastapi_backend_stack",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "pytest + httpx health, houses, booking-request",
+      "weight": 0.8
+    },
+    {
+      "source": "testing_t2_ui_e2e",
+      "target": "nextjs_frontend_stack",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/TESTING_STACK_ROADMAP.md",
+      "source_location": "landing -> house -> booking form -> success",
+      "weight": 0.8
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "docker_stack",
+      "label": "Docker Compose Stack (frontend + api + db)",
+      "nodes": [
+        "service_frontend",
+        "service_api",
+        "service_db"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md"
+    },
+    {
+      "id": "api_mvp_endpoints",
+      "label": "API MVP Endpoints",
+      "nodes": [
+        "api_endpoint_health",
+        "api_endpoint_houses",
+        "api_endpoint_booking_post",
+        "api_endpoint_booking_get"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md"
+    },
+    {
+      "id": "site_pages",
+      "label": "All Public Site Pages",
+      "nodes": [
+        "page_home",
+        "page_houses",
+        "page_booking",
+        "page_activities",
+        "page_region",
+        "page_reviews",
+        "page_contacts"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md"
+    },
+    {
+      "id": "launch_blockers",
+      "label": "Launch Blockers (Alexey Inputs Required)",
+      "nodes": [
+        "content_blocker_photo_p1",
+        "content_blocker_cabin_params",
+        "content_blocker_contacts"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md"
+    },
+    {
+      "id": "api_python_stack",
+      "label": "Python API Technology Stack",
+      "nodes": [
+        "dep_fastapi",
+        "dep_uvicorn",
+        "dep_sqlalchemy",
+        "dep_psycopg",
+        "dep_pydantic",
+        "dep_httpx"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt"
+    },
+    {
+      "id": "photo_pipeline",
+      "label": "Photo Production and Placement Pipeline",
+      "nodes": [
+        "photo_yandex_disk_source",
+        "photo_audit",
+        "photo_page_matrix",
+        "photo_production_brief"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md"
+    },
+    {
+      "id": "execution_stages_completed",
+      "label": "Completed Execution Stages (E0-E5)",
+      "nodes": [
+        "exec_stage_e0",
+        "exec_stage_e1",
+        "exec_stage_e2",
+        "exec_stage_e3",
+        "exec_stage_e5"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md"
+    },
+    {
+      "id": "execution_stages_pending",
+      "label": "Pending Execution Stages (E6-E7)",
+      "nodes": [
+        "exec_stage_e6",
+        "exec_stage_e7"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md"
+    },
+    {
+      "id": "teplo_site_api_mvp_stack",
+      "label": "Teplo Site and API MVP Tech Stack",
+      "nodes": [
+        "nextjs_frontend_stack",
+        "fastapi_backend_stack",
+        "site_api_roadmap",
+        "ops_deploy"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md"
+    },
+    {
+      "id": "booking_flow_chain",
+      "label": "End-to-End Booking Flow Chain",
+      "nodes": [
+        "booking_form_p0_bug",
+        "site_api_forward_layer",
+        "easycamp_leads_endpoint",
+        "easycamp_source_of_truth"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md"
+    },
+    {
+      "id": "growth_marketplace_channels",
+      "label": "Growth Marketplace Channel Plan",
+      "nodes": [
+        "avito_channel",
+        "yandex_business_channel",
+        "yandex_travel_channel",
+        "sutochno_channel",
+        "ostrovok_bronevik_channel",
+        "channel_manager_decision"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/marketplaces-smm-plan.md"
+    },
+    {
+      "id": "revenue_model_cluster",
+      "label": "Revenue Model and Pricing Cluster",
+      "nodes": [
+        "revenue_model_300k",
+        "pricing_ladder",
+        "house_forest_34",
+        "house_family_40",
+        "house_compact_32",
+        "kpi_north_star"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/subagents/revenue-model-300k.md"
+    },
+    {
+      "id": "infra_safety_cluster",
+      "label": "Infra Safety and Deploy Constraints",
+      "nodes": [
+        "vpnbot_nginx_constraint",
+        "override_conf_deploy_strategy",
+        "fi_rz4_server",
+        "domain_teplo_v_arkhyze_ru",
+        "rollback_procedure",
+        "ops_deploy",
+        "ops_restore",
+        "ops_backup"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/growth/subagents/infra-domain-audit.md"
+    },
+    {
+      "id": "growth_roadmap_phases",
+      "label": "Growth Roadmap Phase Sequence",
+      "nodes": [
+        "growth_phase0_freeze_risk",
+        "growth_phase1_stop_losing_leads",
+        "growth_phase2_public_site_launch",
+        "growth_phase3_trust_conversion",
+        "growth_phase4_avito_sprint",
+        "growth_phase5_local_seo",
+        "growth_phase6_ota_expansion",
+        "growth_phase7_bot_operator"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md"
+    },
+    {
+      "id": "site_dev_phases",
+      "label": "Site Development Phase Sequence E0-E7",
+      "nodes": [
+        "phase_e0_infra_baseline",
+        "phase_e1_front_scaffold",
+        "phase_e2_api_scaffold",
+        "phase_e3_booking_flow_mvp",
+        "phase_e4_routing_domain",
+        "phase_e5_admin_mvp",
+        "phase_e6_hardening",
+        "phase_e7_uat_launch"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_ROADMAP_TEPLO.md"
+    },
+    {
+      "id": "booking_roadmap_s_phases",
+      "label": "Booking Roadmap S10-S12 Phase Sequence",
+      "nodes": [
+        "phase_s10_end_to_end_booking",
+        "phase_s11_hardening",
+        "phase_s12_ux_content"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_BOOKING_ROADMAP.md"
+    },
+    {
+      "id": "testing_tracks",
+      "label": "Testing Stack Five Tracks",
+      "nodes": [
+        "testing_t1_api_smoke",
+        "testing_t2_ui_e2e",
+        "testing_t3_performance",
+        "testing_t4_security",
+        "testing_t5_visual_regression"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/TESTING_STACK_ROADMAP.md"
+    },
+    {
+      "id": "subagent_growth_outputs",
+      "label": "Growth Audit Subagent Output Set",
+      "nodes": [
+        "subagent_infra_domain",
+        "subagent_marketplaces_smm",
+        "subagent_revenue_300k",
+        "subagent_site_ux",
+        "growth_audit_roadmap"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/growth/README.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

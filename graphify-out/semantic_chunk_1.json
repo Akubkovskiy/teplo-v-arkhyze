@@ -1,0 +1,1402 @@
+{
+  "nodes": [
+    {
+      "id": "claude_teplo_repo",
+      "label": "teplo-v-arkhyze Repo (CLAUDE.md)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claude_index",
+      "label": "teplo-v-arkhyze Index",
+      "file_type": "document",
+      "source_file": "INDEX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claude_readme",
+      "label": "teplo-v-arkhyze README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claude_status",
+      "label": "teplo-v-arkhyze Status",
+      "file_type": "document",
+      "source_file": "STATUS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-04-08",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project_teplo_site",
+      "label": "Teplo Glamping Public Website",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "service_frontend",
+      "label": "Next.js Frontend Service",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "service_api",
+      "label": "Python FastAPI Service",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "service_db",
+      "label": "Postgres Database Container",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "server_fi_rz4",
+      "label": "Server FI-RZ-4",
+      "file_type": "document",
+      "source_file": "STATUS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project_easycamp_teplo",
+      "label": "EasyCamp-Teplo Booking Backoffice",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_requirements",
+      "label": "API Python Dependencies (requirements.txt)",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_fastapi",
+      "label": "FastAPI 0.116.1",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_uvicorn",
+      "label": "Uvicorn 0.35.0",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_sqlalchemy",
+      "label": "SQLAlchemy 2.0.43",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_psycopg",
+      "label": "Psycopg3 (binary) 3.2.9",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_pydantic",
+      "label": "Pydantic 2.11.7",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dep_httpx",
+      "label": "HTTPX 0.28.1",
+      "file_type": "document",
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "arch_decision",
+      "label": "Architecture Decision (2026-02-28)",
+      "file_type": "document",
+      "source_file": "docs/ARCHITECTURE_DECISION.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-02-28",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "content_requirements",
+      "label": "Content Requirements for Launch",
+      "file_type": "document",
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-02",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "next_actions_alexey",
+      "label": "Next Actions from Alexey (Launch Finalization)",
+      "file_type": "document",
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-04",
+      "author": "Alexey",
+      "contributor": null
+    },
+    {
+      "id": "photo_audit",
+      "label": "Photo Audit Progress (2026-03-01)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-01",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "photo_page_matrix",
+      "label": "Photo to Page Matrix (v2 final draft)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-02",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "photo_production_brief",
+      "label": "Photo Production Brief (Nano Banana AI generation)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-01",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "release_checklist",
+      "label": "Release Candidate Checklist",
+      "file_type": "document",
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-04",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "s2_s3_checklist",
+      "label": "S2/S3 Page Checklist",
+      "file_type": "document",
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-03-01",
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "site_api_checklist",
+      "label": "Site+API Execution Checklist",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_home",
+      "label": "Site Page: Home (/)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_houses",
+      "label": "Site Page: Houses (/houses)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_booking",
+      "label": "Site Page: Booking (/booking)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_activities",
+      "label": "Site Page: Activities (/activities)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_region",
+      "label": "Site Page: Region (/region)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_reviews",
+      "label": "Site Page: Reviews (/reviews)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "page_contacts",
+      "label": "Site Page: Contacts (/contacts)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_endpoint_health",
+      "label": "API Endpoint: GET /health",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_endpoint_houses",
+      "label": "API Endpoint: GET /houses",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_endpoint_booking_post",
+      "label": "API Endpoint: POST /booking-requests",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "api_endpoint_booking_get",
+      "label": "API Endpoint: GET /booking-requests/{id}",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "content_blocker_photo_p1",
+      "label": "Content Blocker: P1 Photo Package",
+      "file_type": "document",
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "content_blocker_cabin_params",
+      "label": "Content Blocker: Cabin Commercial Parameters",
+      "file_type": "document",
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "content_blocker_contacts",
+      "label": "Content Blocker: Public Contacts Confirmation",
+      "file_type": "document",
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "photo_yandex_disk_source",
+      "label": "Photo Source: Yandex Disk (71 files)",
+      "file_type": "document",
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "cabin_third_avito",
+      "label": "Third Cabin (Avito ID 3792037514) — Missing Data",
+      "file_type": "document",
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e0",
+      "label": "Execution Stage E0: Infra baseline",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e1",
+      "label": "Execution Stage E1: Front/API/DB scaffold",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e2",
+      "label": "Execution Stage E2: API models + booking endpoint",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e3",
+      "label": "Execution Stage E3: Front booking flow",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e4",
+      "label": "Execution Stage E4: Reverse-proxy subdomain (in progress)",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e5",
+      "label": "Execution Stage E5: Admin MVP",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e6",
+      "label": "Execution Stage E6: Hardening (pending)",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "exec_stage_e7",
+      "label": "Execution Stage E7: UAT + Launch (pending)",
+      "file_type": "document",
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "claude_teplo_repo",
+      "target": "project_teplo_site",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "service_frontend",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "service_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "service_db",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "server_fi_rz4",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "STATUS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_teplo_site",
+      "target": "project_easycamp_teplo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "arch_decision",
+      "target": "project_easycamp_teplo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/ARCHITECTURE_DECISION.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "arch_decision",
+      "target": "project_teplo_site",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/ARCHITECTURE_DECISION.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "service_api",
+      "target": "api_requirements",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_fastapi",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_uvicorn",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_sqlalchemy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_psycopg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_pydantic",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "api_requirements",
+      "target": "dep_httpx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "dep_psycopg",
+      "target": "service_db",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "dep_sqlalchemy",
+      "target": "service_db",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "api/requirements.txt",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "content_requirements",
+      "target": "cabin_third_avito",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_requirements",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_requirements",
+      "target": "page_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_requirements",
+      "target": "page_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_requirements",
+      "target": "page_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/CONTENT_REQUIREMENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "next_actions_alexey",
+      "target": "content_blocker_photo_p1",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "next_actions_alexey",
+      "target": "content_blocker_cabin_params",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "next_actions_alexey",
+      "target": "content_blocker_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "next_actions_alexey",
+      "target": "photo_production_brief",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "content_blocker_photo_p1",
+      "target": "photo_production_brief",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_audit",
+      "target": "photo_yandex_disk_source",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_audit",
+      "target": "photo_page_matrix",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_home",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_activities",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_region",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_page_matrix",
+      "target": "page_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_home",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_activities",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "photo_production_brief",
+      "target": "page_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PRODUCTION_BRIEF_NANO_BANANA.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "content_blocker_photo_p1",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "page_home",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "page_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "release_checklist",
+      "target": "service_api",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_home",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_activities",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_region",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_reviews",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_contacts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "page_booking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "photo_production_brief",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "s2_s3_checklist",
+      "target": "photo_page_matrix",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/S2_S3_PAGE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "api_endpoint_health",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "api_endpoint_houses",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "api_endpoint_booking_post",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "api_endpoint_booking_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e0",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e1",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e2",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e3",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e4",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e5",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e6",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "site_api_checklist",
+      "target": "exec_stage_e7",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "exec_stage_e1",
+      "target": "service_frontend",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "exec_stage_e1",
+      "target": "service_api",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "exec_stage_e1",
+      "target": "service_db",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "api_endpoint_booking_post",
+      "target": "page_booking",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "api_endpoint_houses",
+      "target": "page_houses",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.9
+    },
+    {
+      "source": "release_checklist",
+      "target": "next_actions_alexey",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "release_checklist",
+      "target": "s2_s3_checklist",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/RELEASE_CANDIDATE_CHECKLIST.md",
+      "source_location": null,
+      "weight": 0.85
+    },
+    {
+      "source": "photo_audit",
+      "target": "content_requirements",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md",
+      "source_location": null,
+      "weight": 0.8
+    },
+    {
+      "source": "claude_index",
+      "target": "claude_teplo_repo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "INDEX.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claude_status",
+      "target": "project_teplo_site",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "STATUS.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "docker_stack",
+      "label": "Docker Compose Stack (frontend + api + db)",
+      "nodes": ["service_frontend", "service_api", "service_db"],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md"
+    },
+    {
+      "id": "api_mvp_endpoints",
+      "label": "API MVP Endpoints",
+      "nodes": ["api_endpoint_health", "api_endpoint_houses", "api_endpoint_booking_post", "api_endpoint_booking_get"],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md"
+    },
+    {
+      "id": "site_pages",
+      "label": "All Public Site Pages",
+      "nodes": ["page_home", "page_houses", "page_booking", "page_activities", "page_region", "page_reviews", "page_contacts"],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_PAGE_MATRIX.md"
+    },
+    {
+      "id": "launch_blockers",
+      "label": "Launch Blockers (Alexey Inputs Required)",
+      "nodes": ["content_blocker_photo_p1", "content_blocker_cabin_params", "content_blocker_contacts"],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/NEXT_ACTIONS_FROM_ALEXEY.md"
+    },
+    {
+      "id": "api_python_stack",
+      "label": "Python API Technology Stack",
+      "nodes": ["dep_fastapi", "dep_uvicorn", "dep_sqlalchemy", "dep_psycopg", "dep_pydantic", "dep_httpx"],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/requirements.txt"
+    },
+    {
+      "id": "photo_pipeline",
+      "label": "Photo Production and Placement Pipeline",
+      "nodes": ["photo_yandex_disk_source", "photo_audit", "photo_page_matrix", "photo_production_brief"],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/PHOTO_AUDIT_PROGRESS_2026-03-01.md"
+    },
+    {
+      "id": "execution_stages_completed",
+      "label": "Completed Execution Stages (E0-E5)",
+      "nodes": ["exec_stage_e0", "exec_stage_e1", "exec_stage_e2", "exec_stage_e3", "exec_stage_e5"],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md"
+    },
+    {
+      "id": "execution_stages_pending",
+      "label": "Pending Execution Stages (E6-E7)",
+      "nodes": ["exec_stage_e6", "exec_stage_e7"],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/SITE_API_EXECUTION_CHECKLIST.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
