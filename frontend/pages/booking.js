@@ -21,9 +21,14 @@ function formatPrice(n) {
   return n.toLocaleString("ru-RU");
 }
 
+function todayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+
 export default function BookingPage() {
   const router = useRouter();
   const qsHouse = Number(router.query.house) || 1;
+  const minDate = todayStr();
   const [houses, setHouses] = useState(FALLBACK_HOUSES);
   const [form, setForm] = useState({
     house: qsHouse,
@@ -265,6 +270,8 @@ export default function BookingPage() {
           <label>Имя</label>
           <input
             required
+            autoComplete="name"
+            placeholder="Имя и фамилия"
             value={form.guest_name}
             onChange={(e) => setForm({ ...form, guest_name: e.target.value })}
             disabled={loading}
@@ -272,6 +279,7 @@ export default function BookingPage() {
           <label>Телефон</label>
           <input
             required
+            autoComplete="tel"
             placeholder="+79991234567"
             value={form.guest_phone}
             onChange={(e) => setForm({ ...form, guest_phone: e.target.value })}
@@ -283,6 +291,7 @@ export default function BookingPage() {
               <input
                 type="date"
                 required
+                min={minDate}
                 value={form.check_in}
                 onChange={(e) => setForm({ ...form, check_in: e.target.value })}
                 disabled={loading}
@@ -293,6 +302,7 @@ export default function BookingPage() {
               <input
                 type="date"
                 required
+                min={form.check_in || minDate}
                 value={form.check_out}
                 onChange={(e) => setForm({ ...form, check_out: e.target.value })}
                 disabled={loading}
@@ -334,9 +344,10 @@ export default function BookingPage() {
             onChange={(e) => setForm({ ...form, guests_count: e.target.value })}
             disabled={loading}
           />
-          <label>Комментарий</label>
+          <label>Комментарий (необязательно)</label>
           <textarea
             rows={3}
+            placeholder="Пожелания по размещению, вопросы, особые условия..."
             value={form.comment}
             onChange={(e) => setForm({ ...form, comment: e.target.value })}
             disabled={loading}

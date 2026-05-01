@@ -1,10 +1,41 @@
+import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 
+const FAQ_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Далеко ли база до посёлка Архыз?",
+      "acceptedAnswer": { "@type": "Answer", "text": "В 3 минутах езды до посёлка Архыз и в 15 минутах до курорта Романтик." },
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли приезжать с детьми?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, подберём домик с удобной планировкой для семьи с детьми." },
+    },
+    {
+      "@type": "Question",
+      "name": "Есть ли парковка?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да, рядом с домиками предусмотрены места для автомобилей." },
+    },
+    {
+      "@type": "Question",
+      "name": "Как быстро подтверждаете заявку?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Обычно в течение 10–30 минут в рабочее время." },
+    },
+  ],
+});
+
 export default function Home() {
   return (
     <Layout description="Домики в лесу, в стороне от посёлка. Без шума и суеты — тишина, горы и чистый воздух. 3 домика на 2–6 гостей, до курорта 15 минут.">
+      <Head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA }} />
+      </Head>
       <AnimatedSection className="hero card hero-mountain">
         <div className="hero-media">
           <img src="/images/hero-mountains-1.jpg" alt="Горы Архыза" />
