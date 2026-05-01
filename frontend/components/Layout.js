@@ -1,11 +1,42 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import cfg from "../site.config";
 
 const SITE_NAME = "Тепло — база отдыха в Архызе";
 const DEFAULT_DESC = "Домики в лесу, в стороне от посёлка. Без шума и суеты — только тишина, горы и чистый воздух. 3 домика на 2–6 гостей, до курорта 15 минут.";
 const SITE_URL = "https://teplo-v-arkhyze.ru";
 const OG_IMAGE = `${SITE_URL}/images/hero-mountains-1.jpg`;
+
+const SCHEMA_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "База отдыха «Тепло»",
+  "alternateName": "Тепло в Архызе",
+  "description": DEFAULT_DESC,
+  "url": SITE_URL,
+  "telephone": cfg.phone,
+  "email": cfg.email,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Архыз",
+    "addressRegion": "Карачаево-Черкесская Республика",
+    "addressCountry": "RU",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": cfg.coords.lat,
+    "longitude": cfg.coords.lon,
+  },
+  "image": OG_IMAGE,
+  "priceRange": "₽₽",
+  "numberOfRooms": 3,
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "BBQ", "value": true },
+  ],
+});
 
 const navItems = [
   ["/", "Главная"],
@@ -41,6 +72,9 @@ export default function Layout({ title, description, children }) {
 
         {/* Preload hero images */}
         <link rel="preload" as="image" href="/images/hero-mountains-1.jpg" />
+
+        {/* Schema.org structured data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: SCHEMA_LD }} />
       </Head>
 
       <div className="site-wrap">

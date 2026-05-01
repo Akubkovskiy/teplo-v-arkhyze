@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
+import cfg from "../site.config";
 
 const reviews = [
   {
@@ -60,6 +61,14 @@ export default function ReviewsPage() {
           <img src="/images/hero-mountains-2.jpg" alt="Горы Архыза" />
           <img src="/images/house-winter-1.jpg" alt="Домик зимой" />
           <img src="/images/interior-dining-1.jpg" alt="Интерьер домика" />
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h3 style={{ marginTop: 0 }}>Побывали у нас?</h3>
+        <p style={{ marginTop: 0 }}>Оставьте отзыв на Яндекс.Картах — это помогает другим путешественникам нас найти.</p>
+        <div className="hero-actions">
+          <a className="btn-secondary" href={cfg.yandexReviewsUrl} target="_blank" rel="noreferrer">Оставить отзыв →</a>
         </div>
       </AnimatedSection>
 

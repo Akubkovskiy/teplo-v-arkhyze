@@ -12,6 +12,7 @@ config.adminUrl = `https://t.me/${config.adminTelegram}`;
 config.phoneHref = `tel:${config.phone.replace(/[\s\-()]/g, "")}`;
 config.emailHref = `mailto:${config.email}`;
 config.yandexMapUrl = "https://yandex.com/maps/-/CPupUDor";
+config.yandexReviewsUrl = process.env.NEXT_PUBLIC_YANDEX_REVIEWS_URL || "https://yandex.ru/maps/-/CPupUDor";
 config.googleMapUrl = `https://www.google.com/maps?q=${config.coords.lat},${config.coords.lon}`;
 config.gisMapUrl = `https://2gis.ru/geo/${config.coords.lon},${config.coords.lat}`;
 
