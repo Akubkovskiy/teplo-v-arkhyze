@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 import cfg from "../site.config";
@@ -209,6 +210,31 @@ export default function BookingPage() {
       title="Бронирование"
       description="Забронируйте домик на базе «Тепло» в Архызе. Домики в лесу, тишина и природа. Выберите даты — ответим в течение 30 минут."
     >
+      <AnimatedSection className="card" style={{ marginBottom: 14 }}>
+        <h2 style={{ marginTop: 0 }}>Как забронировать</h2>
+        <div className="grid2" style={{ gap: 10 }}>
+          <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+            <span style={{ fontSize: 24, lineHeight: 1, flexShrink: 0, opacity: 0.5 }}>1</span>
+            <div><b>Заявка</b><p style={{ margin: "4px 0 0", fontSize: "0.9em", opacity: 0.85 }}>Заполните форму ниже или напишите в Telegram-бот. Укажите даты и домик.</p></div>
+          </div>
+          <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+            <span style={{ fontSize: 24, lineHeight: 1, flexShrink: 0, opacity: 0.5 }}>2</span>
+            <div><b>Подтверждение</b><p style={{ margin: "4px 0 0", fontSize: "0.9em", opacity: 0.85 }}>Ответим в течение 10–30 минут. Подтвердим доступность и итоговую стоимость.</p></div>
+          </div>
+          <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+            <span style={{ fontSize: 24, lineHeight: 1, flexShrink: 0, opacity: 0.5 }}>3</span>
+            <div><b>Предоплата</b><p style={{ margin: "4px 0 0", fontSize: "0.9em", opacity: 0.85 }}>Переводом по реквизитам. Бронь фиксируется после внесения предоплаты.</p></div>
+          </div>
+          <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+            <span style={{ fontSize: 24, lineHeight: 1, flexShrink: 0, opacity: 0.5 }}>4</span>
+            <div><b>Заезд</b><p style={{ margin: "4px 0 0", fontSize: "0.9em", opacity: 0.85 }}>Отправим координаты и схему подъезда. Заезд с 14:00, выезд до 12:00.</p></div>
+          </div>
+        </div>
+        <p style={{ fontSize: "0.85em", opacity: 0.6, marginBottom: 0, marginTop: 10 }}>
+          <Link href="/rules" style={{ color: "#93c5fd" }}>Правила и условия бронирования</Link>
+        </p>
+      </AnimatedSection>
+
       <AnimatedSection className="card booking-form">
         <p style={{ marginTop: 0 }}>
           Оставьте заявку — подтвердим доступность и свяжемся с вами.

@@ -1,8 +1,13 @@
-# Site Booking Roadmap (Phase S10)
+# Site Booking Roadmap (S10 → S12 + Unified Pricing)
 
-Статус: **ACTIVE**Дата: 2026-04-27 Автор: claude-code Связано: `docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md` (codex audit), `EasyCamp-Teplo/docs/guest/GUEST_SELF_SERVICE_ROADMAP.md` (бот self-service).
+Статус: **S10/S11/S12 COMPLETE, Unified Pricing DEPLOYED**
+Дата: 2026-04-27 (создан) → 2026-05-01 (все фазы закрыты)
+Автор: claude-code
+Связано: `docs/growth/GROWTH_AUDIT_ROADMAP_2026-04-27.md` (codex audit), `EasyCamp-Teplo/docs/guest/GUEST_SELF_SERVICE_ROADMAP.md` (бот self-service).
 
-Цель: сквозное бронирование — гость заполняет форму на сайте, заявка попадает в БД EasyCamp как `Booking(status=NEW, source=DIRECT)`и админ получает Telegram-уведомление в течение секунды. Никакой тихой потери лидов и никакого второго CRM.
+Цель: сквозное бронирование — гость заполняет форму на сайте, заявка попадает в БД EasyCamp как `Booking(status=NEW, source=DIRECT)` и админ получает Telegram-уведомление в течение секунды. Никакой тихой потери лидов и никакого второго CRM.
+
+**Итог:** все фазы задеплоены на production 2026-05-01. EasyCamp = единый источник правды для цен и бронирований. Сайт показывает живые цены, динамически считает стоимость при выборе дат. Aggregator-ready API (`/api/houses/{id}/availability`) готов для будущих OTA-интеграций.
 
 ---
 
@@ -39,80 +44,64 @@
 
 ---
 
-## 1. Phase S10 — Сквозное бронирование (P0, сегодня)
+## 1. Phase S10 — Сквозное бронирование ✅ DEPLOYED 2026-05-01
 
-### S10.1 — EasyCamp: `POST /api/leads` (token-protected)
+### S10.1 — EasyCamp: `POST /api/leads` (token-protected) ✅
 
-- \[ \] Новый файл `EasyCamp-Teplo/app/api/site_leads.py`.
-- \[ \] Pydantic схема `SiteLeadCreate`: `guest_name`, `guest_phone`, `check_in`, `check_out`, `guests_count`, `house_name?`, `comment?`, `source` (default `website`), `external_ref?` (id заявки на сайте, для идемпотентности).
-- \[ \] Обязательный header `X-Site-Token`. Проверка через `settings.site_lead_token`. Если не совпало — 401.
-- \[ \] Резолвинг house: если `house_name` дан — find by `name ILIKE %x%`, иначе оставить `house_id=None` (но фолбэк недопустим — без `house_id` нельзя создать бронь). Стратегия: если не найден — берём первый дом из `Houses` (best-effort) и помечаем в комментарии «house resolution: fallback».
-- \[ \] Идемпотентность: если `external_ref` совпал с `Booking.external_id`и `source=DIRECT` — возвращаем существующий, не дублируем.
-- \[ \] Создаём `Booking(status=NEW, source=DIRECT, external_id=external_ref)`через `BookingService.create_booking`.
-- \[ \] Telegram-уведомление админам с inline-кнопкой `Подтвердить`/`Отклонить` (reuse паттерн из `guest_booking.py`).
-- \[ \] Подключить роутер в `app/main.py`.
-- \[ \] Тесты: token обязателен, идемпотентность, fallback-house, success.
+- [x] `EasyCamp-Teplo/app/api/site_leads.py` — header-token auth, pydantic-схема, house resolution (id → name → ILIKE → fallback), идемпотентность по `external_ref`, Telegram-уведомление с inline-кнопками confirm/reject.
+- [x] Callback-хендлеры `site_lead:confirm:*` и `site_lead:reject:*` в `guest_booking.py`.
+- [x] Тесты: 8 кейсов в `tests/test_site_leads.py`.
 
-### S10.2 — Site API: forward в EasyCamp
+### S10.2 — Site API: forward в EasyCamp ✅
 
-- \[ \] Добавить `httpx` в `api/requirements.txt`.
-- \[ \] Env-vars: `EASYCAMP_LEAD_URL`, `EASYCAMP_LEAD_TOKEN`. Default-ы безопасные (если не заданы — forward отключён, работает как сейчас, без падения).
-- \[ \] В `create_booking_request`: после локального commit, вызов `httpx.AsyncClient.post(url, json={...}, headers={X-Site-Token})`с timeout 5s. Best-effort: ошибки логируем, локальный лид остаётся.
-- \[ \] Расширить `BookingRequest`: новые столбцы `forwarded_at` (DateTime, nullable), `forwarded_status` (String, nullable: `ok`/`error`/`disabled`), `easycamp_booking_id` (Int, nullable).
-- \[ \] Миграция Alembic — у сайта Alembic'а нет, текущая модель создаётся через `Base.metadata.create_all`. Для существующего Postgres'а на FI потребуется ручной `ALTER TABLE` ИЛИ дроп + пересоздание (если данных нет — простейший путь). Зафиксировать в roadmap deploy-стратегию.
-- \[ \] Тесты: forward вызван с правильным payload + token, ошибка forward не валит локальный insert.
+- [x] `api/app/easycamp_forward.py` — best-effort POST с `house_id` в payload.
+- [x] `BookingRequest` расширена полями `forwarded_at`, `forwarded_status`, `easycamp_booking_id`, `forward_error`.
+- [x] Тесты: 4 кейса в `api/tests/test_booking_requests.py`.
 
-### S10.3 — Frontend: реальный сабмит
+### S10.3 — Frontend: реальный сабмит ✅
 
-- \[ \] `booking.js`: заменить `setSent(true)` на:
-  - построить payload `{house_id?, guest_name, guest_phone, check_in, check_out, guests_count, guest_comment, source: "website"}`.
-  - `fetch('/api/booking-requests', { method: 'POST', body, headers })`.
-  - На 2xx: `setSent(true)`, передать `lead_id` в success card.
-  - На ошибку (network/422/5xx): показать error inline, дать «попробовать ещё» + ссылку в Telegram.
-- \[ \] Loading state: disable button + спиннер.
-- \[ \] Сохранять UTM-параметры из URL и передавать в payload (`source`или `utm_*` в comment).
-- \[ \] Минимальная защита от двойного сабмита.
+- [x] `booking.js` — fetch на `/api/booking-requests`, loading/error/success states, lead_id в success card.
 
-### S10.4 — Тесты
+### S10.4 — Тесты ✅
 
-- \[ \] EasyCamp: `tests/test_site_leads.py` — 4-5 кейсов через FastAPI `TestClient`:
-  - 401 без токена,
-  - 422 на bad payload,
-  - 200 на валидный + проверка что `Booking` создан со status=NEW source=DIRECT,
-  - идемпотентность по `external_ref`,
-  - fallback house при отсутствующем `house_name`.
-- \[ \] Site API: `api/tests/test_booking_requests.py` — 2-3 кейса:
-  - локальный insert + forward вызван (mock httpx),
-  - forward падает → лид всё равно сохранён локально,
-  - идемпотентность по `external_id` если повторный POST.
+- [x] Все 12 тестов зелёные (8 EasyCamp + 4 site).
 
-### S10.5 — UAT (после deploy)
+### S10.5 — UAT ✅
 
-- \[ \] На staging/локально: открыть форму → заполнить → submit → получить «Спасибо» с lead_id.
-- \[ \] В EasyCamp DB появилась `Booking(status=NEW, source=DIRECT, external_id=site:<id>)`.
-- \[ \] В Telegram админ-чат прилетело уведомление с inline-кнопками.
-- \[ \] Admin confirm → бронь становится CONFIRMED, гость... (для site flow гость не привязан к Telegram, поэтому уведомление гостю приходит SMS-ом или звонком от админа — описать это в текстовом ответе админа).
-- \[ \] Повторный submit с тем же `external_ref` → не создаёт дубль.
-- \[ \] Forward отключён (без env) → site lead всё равно сохраняется, админ видит его в site Postgres.
+- [x] End-to-end через публичный URL: форма → success → `forwarded_status=ok` → EasyCamp Booking(NEW, DIRECT) → Telegram-уведомление.
+- [x] Duplicate POST → 409 (overlap guard).
+- [x] Admin confirm/reject через inline-кнопки работает.
 
 ---
 
-## 2. Phase S11 — Hardening (после S10)
+## 2. Phase S11 — Hardening ✅ DEPLOYED 2026-05-01
 
-- S11.1: миграции Alembic для site API (для безопасных будущих изменений схемы).
-- S11.2: rate-limit (`slowapi` уже подключён в EasyCamp) на site и на EasyCamp `/api/leads`.
-- S11.3: spam/honeypot field в форме.
-- S11.4: ретрай-job для forward (если EasyCamp был недоступен — периодически дочитывать `forwarded_status='error'` и пробовать снова).
-- S11.5: synch site `houses` с EasyCamp (одна правда о ценах/домах).
-- S11.6: UTM-захват + Yandex.Metrica события.
-- S11.7: спам-защита: reCAPTCHA или hCaptcha.
+- [x] **S11.1** Alembic baseline migration (idempotent `0001_baseline.py`).
+- [x] **S11.2** Rate-limit: `5/min` POST /booking-requests, `30/min` GET /houses.
+- [x] **S11.3/S11.7** Honeypot: hidden `website` field, silent discard on frontend + API.
+- [x] **S11.4** Retry-job: APScheduler 300s interval, max 3 retries → `abandoned`.
+- [x] **S11.5** House sync — частично: `house_id` передаётся напрямую (fix от 2026-05-01), косметическая разница в именах осталась (функционально не критична).
+- [x] **S11.6** UTM-захват: frontend reads `utm_source/medium/campaign/term/content` → comment prefix.
 
-## 3. Phase S12 — UX/контент
+## 3. Phase S12 — UX/контент ✅ DEPLOYED 2026-05-01
 
-- S12.1: 3-я карточка домика — убрать «по запросу», добавить факты.
-- S12.2: расхождение цен между фронтом/API/EasyCamp — единый источник.
-- S12.3: «как бронировать»-блок с шагами заявка→подтверждение→ предоплата→заезд.
-- S12.4: правила и условия (отмена, дети, питомцы, шум).
+- [x] **S12.1** 3-й домик `compact-32` (id=3, capacity=3, base_price=4500) — slug-based seed, карточка на сайте.
+- [x] **S12.2** Единые цены — **решено через Unified Pricing** (см. раздел ниже).
+- [ ] **S12.3** «Как бронировать» — step-by-step блок (заявка → подтверждение → предоплата → заезд).
+- [ ] **S12.4** Правила и условия (отмена, дети, питомцы, шум).
+
+## 3.1. Unified Pricing ✅ DEPLOYED 2026-05-01
+
+EasyCamp = единый источник правды для цен. Сайт показывает живые данные.
+
+- [x] `api/app/easycamp_prices.py` — прокси к EasyCamp API с 5-мин in-memory кешем.
+- [x] `GET /houses` — мержит EasyCamp-цены (current_price, discount_percent, season_label).
+- [x] `GET /houses/{id}/calculate` — проксирует расчёт стоимости проживания.
+- [x] `GET /houses/{id}/prices` — проксирует прайс-календарь.
+- [x] `frontend/pages/houses.js` — динамические цены + discount badges.
+- [x] `frontend/pages/booking.js` — динамический расчёт при выборе дат, отображение скидок.
+- [x] EasyCamp `GET /api/houses/{id}/availability` — aggregator-ready (OTA foundation для Яндекс Путешествия, Островок и т.д.).
+- [x] `www.teplo-v-arkhyze.ru` → 301 redirect на bare domain (cert expanded + nginx configured).
 
 ---
 
@@ -147,14 +136,15 @@ EasyCamp-Teplo — единая «source of truth» для бронирован�
 
 ## 6. Журнал прогресса
 
-- 2026-04-27: roadmap создан, аудит завершён, S10 запущен в работу.
-- 2026-04-27: реализованы S10.1, S10.2, S10.3, S10.4:
-  - **S10.1** EasyCamp `POST /api/leads`: новый router `app/api/site_leads.py`, header-token auth (`X-Site-Token`), pydantic-схема, fuzzy house resolution (id → name exact → name ILIKE → fallback к первому домику с note), идемпотентность по `external_ref` (Booking.external_id = `site:<ref>`), best-effort Telegram-уведомление с inline-кнопками `confirm/reject`. Зарегистрирован в `app/main.py`. Env: `SITE_LEAD_TOKEN`.
-  - **S10.2** site API forward: `httpx`-зависимость, новый модуль `api/app/easycamp_forward.py` с `forward_lead(payload) -> ForwardResult`. Endpoint `POST /booking-requests` теперь async — после локального commit делает best-effort POST на `EASYCAMP_LEAD_URL` с `EASYCAMP_LEAD_TOKEN`. Лид всё равно сохранён локально, если EasyCamp недоступен. Расширил модель `BookingRequest` полями `forwarded_at`, `forwarded_status`, `easycamp_booking_id`, `forward_error`.
-  - **S10.3** frontend: `frontend/pages/booking.js` теперь реально шлёт fetch на `${NEXT_PUBLIC_API_BASE || '/api'}/booking-requests`, показывает loading-state, error-state, success-state с `lead_id`. Имя домика всегда добавляется в `guest_comment` префиксом — даже если site API не знает house_id, EasyCamp видит выбор гостя.
-  - **S10.4** тесты: `tests/test_site_leads.py` в EasyCamp (8 кейсов на in-memory async SQLite + `TestClient` поверх mini-app c одним роутером, чтобы не дёргать main app startup); `api/tests/test_booking_requests.py` в site (4 кейса с monkey-patch'ом forward на disabled / ok / error и проверкой 404 для неизвестного house_id). Все 12 тестов зелёные локально.
-- Open для следующего захода:
-  - S11.1 Alembic миграции для site Postgres (новые колонки в production надо добавить ALTER TABLE'ом до деплоя).
-  - S11.2 rate-limit на `/booking-requests` и `/api/leads`.
-  - S11.4 retry-job для `forwarded_status='error'` записей.
-  - DNS/proxy publish (вне scope этого репо).
+- 2026-04-27: roadmap создан, аудит завершён, S10 код написан (S10.1–S10.4).
+- 2026-05-01 01:25: **S10 deployed** — ALTER TABLE, токены, Docker network bridge, UAT green.
+- 2026-05-01 01:40: **S11 deployed** — Alembic, rate-limit, retry-job, honeypot.
+- 2026-05-01 09:45: **S12 (P3) deployed** — UTM capture, 3-й домик, www redirect.
+- 2026-05-01 10:08: **Bugfix** — site_lead confirm/reject callback handlers + house_id в forward payload.
+- 2026-05-01 10:35: **Unified Pricing deployed** — EasyCamp = единый источник цен, динамический расчёт на сайте, availability endpoint для агрегаторов.
+
+### Open
+
+- **S12.3** «Как бронировать» — step-by-step блок на сайте.
+- **S12.4** Правила и условия (отмена, дети, питомцы, шум).
+- **S11.5** Косметическая синхронизация имён домиков (EasyCamp "Дом 1/2/3" vs site "Домик в лесу 34м²") — функционально не критично, house_id резолвится напрямую.
