@@ -125,6 +125,7 @@ async def create_booking_request(
         "check_in": req.check_in.isoformat(),
         "check_out": req.check_out.isoformat(),
         "guests_count": req.guests_count,
+        "house_id": req.house_id,
         "house_name": house.name if house else None,
         "comment": req.guest_comment,
         "source": "website",
