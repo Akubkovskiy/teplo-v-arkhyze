@@ -24,25 +24,33 @@ limiter = Limiter(key_func=get_remote_address)
 async def lifespan(app):
     db = next(get_db())
     try:
-        if db.query(House).count() == 0:
-            db.add_all(
-                [
-                    House(
-                        name="Домик в лесу 34м²",
-                        slug="forest-34",
-                        capacity=4,
-                        base_price=5500,
-                        short_description="Уютный домик в лесу с верандой и видом на горы.",
-                    ),
-                    House(
-                        name="Домик семейный 40м²",
-                        slug="family-40",
-                        capacity=6,
-                        base_price=7500,
-                        short_description="Две спальни, зона отдыха и тихая локация рядом с Архызом.",
-                    ),
-                ]
-            )
+        seed_houses = [
+            House(
+                name="Домик в лесу 34м²",
+                slug="forest-34",
+                capacity=4,
+                base_price=5500,
+                short_description="Уютный домик в лесу с верандой и видом на горы.",
+            ),
+            House(
+                name="Домик семейный 40м²",
+                slug="family-40",
+                capacity=6,
+                base_price=7500,
+                short_description="Две спальни, зона отдыха и тихая локация рядом с Архызом.",
+            ),
+            House(
+                name="Компактный домик 32м²",
+                slug="compact-32",
+                capacity=3,
+                base_price=4500,
+                short_description="Уютный домик для двоих-троих с видом на лес и горы.",
+            ),
+        ]
+        existing_slugs = {s for (s,) in db.query(House.slug).all()}
+        new_houses = [h for h in seed_houses if h.slug not in existing_slugs]
+        if new_houses:
+            db.add_all(new_houses)
             db.commit()
     finally:
         db.close()

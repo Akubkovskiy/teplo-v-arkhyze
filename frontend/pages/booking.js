@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
@@ -7,7 +7,7 @@ import cfg from "../site.config";
 const houses = [
   { id: 1, name: "Домик в лесу 34 м²", price: "от 5 000 ₽/сутки" },
   { id: 2, name: "Семейный домик 40 м²", price: "от 7 000 ₽/сутки" },
-  { id: 3, name: "Компактный домик 32 м²", price: "по запросу" },
+  { id: 3, name: "Компактный домик 32 м²", price: "от 4 500 ₽/сутки" },
 ];
 
 // Прод: фронт и API сидят за общим nginx, /api/* проксируется на FastAPI.
@@ -31,11 +31,23 @@ export default function BookingPage() {
     comment: "",
   });
   const [honeypot, setHoneypot] = useState("");
+  const [utm, setUtm] = useState({});
   const [sent, setSent] = useState(false);
   const [leadId, setLeadId] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const q = router.query;
+    const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+    const found = {};
+    for (const k of keys) {
+      if (q[k]) found[k] = String(q[k]);
+    }
+    if (Object.keys(found).length) setUtm(found);
+  }, [router.isReady]);
 
   async function submit(e) {
     e.preventDefault();
@@ -64,11 +76,15 @@ export default function BookingPage() {
     // пустой house_name. Тогда на стороне EasyCamp админ всё равно
     // увидит, какой домик был выбран.
     const commentParts = [];
+    if (Object.keys(utm).length) {
+      const utmStr = Object.entries(utm).map(([k, v]) => `${k.replace("utm_", "")}=${v}`).join(" ");
+      commentParts.push(`UTM: ${utmStr}`);
+    }
     commentParts.push(`Дом: ${houseObj.name}`);
     if (form.comment.trim()) commentParts.push(form.comment.trim());
 
     const payload = {
-      house_id: [1, 2].includes(form.house) ? form.house : null,
+      house_id: form.house,
       guest_name: form.guest_name.trim(),
       guest_phone: phone,
       guest_comment: commentParts.join(" | "),
