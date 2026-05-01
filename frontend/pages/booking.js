@@ -1,26 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 import cfg from "../site.config";
 
-const houses = [
-  { id: 1, name: "Домик в лесу 34 м²", price: "от 5 000 ₽/сутки" },
-  { id: 2, name: "Семейный домик 40 м²", price: "от 7 000 ₽/сутки" },
-  { id: 3, name: "Компактный домик 32 м²", price: "от 4 500 ₽/сутки" },
+const FALLBACK_HOUSES = [
+  { id: 1, name: "Домик в лесу 34 м²" },
+  { id: 2, name: "Семейный домик 40 м²" },
+  { id: 3, name: "Компактный домик 32 м²" },
 ];
 
-// Прод: фронт и API сидят за общим nginx, /api/* проксируется на FastAPI.
-// Можно переопределить через NEXT_PUBLIC_API_BASE для dev-окружения.
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "/api";
 
 function normalizePhone(raw) {
   return (raw || "").replace(/[\s\-()]/g, "");
 }
 
+function formatPrice(n) {
+  return n.toLocaleString("ru-RU");
+}
+
 export default function BookingPage() {
   const router = useRouter();
   const qsHouse = Number(router.query.house) || 1;
+  const [houses, setHouses] = useState(FALLBACK_HOUSES);
   const [form, setForm] = useState({
     house: qsHouse,
     guest_name: "",
@@ -36,11 +39,22 @@ export default function BookingPage() {
   const [leadId, setLeadId] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [priceCalc, setPriceCalc] = useState(null);
+  const [priceLoading, setPriceLoading] = useState(false);
 
+  useEffect(() => {
+    fetch(`${API_BASE}/houses`)
+      .then((r) => r.ok ? r.json() : [])
+      .then((data) => {
+        if (data.length) setHouses(data);
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (!router.isReady) return;
     const q = router.query;
+    if (q.house) setForm((f) => ({ ...f, house: Number(q.house) || 1 }));
     const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
     const found = {};
     for (const k of keys) {
@@ -48,6 +62,32 @@ export default function BookingPage() {
     }
     if (Object.keys(found).length) setUtm(found);
   }, [router.isReady]);
+
+  const fetchPrice = useCallback(async (houseId, checkIn, checkOut) => {
+    if (!checkIn || !checkOut || checkOut <= checkIn) {
+      setPriceCalc(null);
+      return;
+    }
+    setPriceLoading(true);
+    try {
+      const r = await fetch(
+        `${API_BASE}/houses/${houseId}/calculate?check_in=${checkIn}&check_out=${checkOut}`
+      );
+      if (r.ok) {
+        setPriceCalc(await r.json());
+      } else {
+        setPriceCalc(null);
+      }
+    } catch {
+      setPriceCalc(null);
+    } finally {
+      setPriceLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchPrice(form.house, form.check_in, form.check_out);
+  }, [form.house, form.check_in, form.check_out, fetchPrice]);
 
   async function submit(e) {
     e.preventDefault();
@@ -70,11 +110,6 @@ export default function BookingPage() {
     }
 
     const houseObj = houses.find((x) => x.id === form.house) || houses[0];
-    // Префикс с названием домика в комментарии — это страховка на случай,
-    // если site API не найдёт house_id у себя в seed (например, для
-    // 3-го домика, которого пока нет в site DB), и EasyCamp получит
-    // пустой house_name. Тогда на стороне EasyCamp админ всё равно
-    // увидит, какой домик был выбран.
     const commentParts = [];
     if (Object.keys(utm).length) {
       const utmStr = Object.entries(utm).map(([k, v]) => `${k.replace("utm_", "")}=${v}`).join(" ");
@@ -132,7 +167,6 @@ export default function BookingPage() {
     }
   }
 
-
   if (sent) {
     const h = houses.find((x) => x.id === form.house) || houses[0];
     return (
@@ -150,6 +184,9 @@ export default function BookingPage() {
           ) : null}
           <p>Домик: <b>{h.name}</b></p>
           <p>Даты: <b>{form.check_in} — {form.check_out}</b></p>
+          {priceCalc && (
+            <p>Стоимость: <b>{formatPrice(priceCalc.total)} ₽</b> ({priceCalc.nights} {priceCalc.nights === 1 ? "ночь" : priceCalc.nights < 5 ? "ночи" : "ночей"})</p>
+          )}
           <p>Мы свяжемся с вами в течение 10–30 минут в рабочее время для подтверждения.</p>
           <p>Если хотите ускорить — напишите нам напрямую:</p>
           <div className="hero-actions">
@@ -164,6 +201,8 @@ export default function BookingPage() {
       </Layout>
     );
   }
+
+  const selectedHouse = houses.find((x) => x.id === form.house);
 
   return (
     <Layout
@@ -187,10 +226,16 @@ export default function BookingPage() {
           >
             {houses.map((h) => (
               <option key={h.id} value={h.id}>
-                {h.name} · {h.price}
+                {h.name}
+                {h.current_price ? ` · от ${formatPrice(h.current_price)} ₽/сутки` : ""}
               </option>
             ))}
           </select>
+          {selectedHouse && selectedHouse.discount_percent > 0 && (
+            <p style={{ color: "#86efac", fontSize: "0.9em", marginTop: 4 }}>
+              -{selectedHouse.discount_percent}%{selectedHouse.discount_label ? ` ${selectedHouse.discount_label}` : ""}
+            </p>
+          )}
           <label>Имя</label>
           <input
             required
@@ -228,6 +273,32 @@ export default function BookingPage() {
               />
             </div>
           </div>
+
+          {priceLoading && (
+            <p style={{ fontSize: "0.9em", opacity: 0.7 }}>Считаем стоимость...</p>
+          )}
+          {priceCalc && !priceLoading && (
+            <div className="price-summary" style={{
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: 8,
+              padding: "12px 16px",
+              margin: "8px 0",
+            }}>
+              <p style={{ margin: 0, fontWeight: 600, fontSize: "1.1em" }}>
+                {formatPrice(priceCalc.total)} ₽
+                {priceCalc.total_without_discount && priceCalc.total_without_discount > priceCalc.total && (
+                  <span style={{ textDecoration: "line-through", opacity: 0.5, marginLeft: 8, fontWeight: 400, fontSize: "0.9em" }}>
+                    {formatPrice(priceCalc.total_without_discount)} ₽
+                  </span>
+                )}
+              </p>
+              <p style={{ margin: "4px 0 0", fontSize: "0.85em", opacity: 0.7 }}>
+                {priceCalc.nights} {priceCalc.nights === 1 ? "ночь" : priceCalc.nights < 5 ? "ночи" : "ночей"} · ~{formatPrice(priceCalc.avg_per_night)} ₽/ночь
+              </p>
+            </div>
+          )}
+
           <label>Гостей</label>
           <input
             type="number"

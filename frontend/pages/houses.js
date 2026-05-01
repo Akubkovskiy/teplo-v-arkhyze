@@ -1,31 +1,90 @@
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 
-const houses = [
-  {
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "/api";
+
+const HOUSE_META = {
+  1: {
     name: "Домик в лесу 34 м²",
     guests: "до 4 гостей (+ доп. место)",
-    price: "от 5 000 ₽/сутки",
     text: "Уютный домик с верандой и видом на горы. Wi‑Fi, горячая вода, мангальная зона.",
     img: "/images/house-winter-1.jpg",
   },
-  {
+  2: {
     name: "Семейный домик 40 м²",
     guests: "до 6 гостей",
-    price: "от 7 000 ₽/сутки",
     text: "Две отдельные спальни, терраса, зона отдыха, парковка, комфорт для семьи или компании.",
     img: "/images/interior-dining-1.jpg",
   },
-  {
+  3: {
     name: "Компактный домик 32 м²",
     guests: "до 4 гостей",
-    price: "от 4 500 ₽/сутки",
     text: "Практичный формат для короткого отдыха: базовый комфорт и приватная атмосфера.",
     img: "/images/interior-bath-1.jpg",
   },
-];
+};
+
+function formatPrice(price) {
+  return price.toLocaleString("ru-RU");
+}
+
+function PriceDisplay({ house }) {
+  if (!house.current_price) {
+    return <p>💰 от {formatPrice(house.base_price)} ₽/сутки</p>;
+  }
+  if (house.discount_percent > 0) {
+    return (
+      <div>
+        <p style={{ margin: 0 }}>
+          💰{" "}
+          <span style={{ textDecoration: "line-through", opacity: 0.6 }}>
+            {formatPrice(house.base_price)} ₽
+          </span>{" "}
+          <b>{formatPrice(house.current_price)} ₽/сутки</b>
+        </p>
+        <span className="discount-badge">-{house.discount_percent}%{house.discount_label ? ` ${house.discount_label}` : ""}</span>
+      </div>
+    );
+  }
+  return <p>💰 от {formatPrice(house.current_price)} ₽/сутки</p>;
+}
 
 export default function HousesPage() {
+  const [houses, setHouses] = useState(
+    Object.entries(HOUSE_META).map(([id, meta]) => ({
+      id: Number(id),
+      ...meta,
+      base_price: 0,
+      current_price: null,
+      discount_percent: 0,
+      discount_label: null,
+    }))
+  );
+
+  useEffect(() => {
+    fetch(`${API_BASE}/houses`)
+      .then((r) => r.ok ? r.json() : [])
+      .then((apiHouses) => {
+        if (!apiHouses.length) return;
+        setHouses((prev) =>
+          prev.map((h) => {
+            const api = apiHouses.find((a) => a.id === h.id);
+            if (!api) return h;
+            return {
+              ...h,
+              base_price: api.base_price,
+              current_price: api.current_price,
+              discount_percent: api.discount_percent || 0,
+              discount_label: api.discount_label,
+              season_label: api.season_label,
+            };
+          })
+        );
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <Layout title="Домики" description="Домики базы «Тепло» в Архызе: от 34 до 40 м², на 2–6 гостей. В лесу, в стороне от посёлка. Wi-Fi, кухня, мангал, парковка.">
       <AnimatedSection className="card">
@@ -35,14 +94,15 @@ export default function HousesPage() {
       </AnimatedSection>
 
       <AnimatedSection className="grid3" style={{ marginTop: 14 }}>
-        {houses.map((h, idx) => (
-          <article className="card card-hover" key={h.name}>
+        {houses.map((h) => (
+          <article className="card card-hover" key={h.id}>
             <img src={h.img} alt={h.name} className="house-thumb" />
             <h3 style={{ marginTop: 12 }}>{h.name}</h3>
             <p>{h.text}</p>
             <p>👥 {h.guests}</p>
-            <p>💰 {h.price}</p>
-            <a className="btn-primary" href={`/booking?house=${idx + 1}`}>Выбрать этот домик</a>
+            <PriceDisplay house={h} />
+            {h.season_label && <p style={{ fontSize: "0.85em", opacity: 0.8 }}>📅 {h.season_label}</p>}
+            <a className="btn-primary" href={`/booking?house=${h.id}`}>Выбрать этот домик</a>
           </article>
         ))}
       </AnimatedSection>

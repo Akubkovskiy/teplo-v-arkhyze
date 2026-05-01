@@ -9,6 +9,10 @@ class HouseOut(BaseModel):
     capacity: int
     base_price: int
     short_description: str
+    current_price: int | None = None
+    discount_percent: int = 0
+    discount_label: str | None = None
+    season_label: str | None = None
 
     class Config:
         from_attributes = True

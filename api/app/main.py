@@ -12,6 +12,12 @@ from sqlalchemy import select
 
 from .database import get_db
 from .easycamp_forward import forward_lead
+from .easycamp_prices import (
+    get_houses_with_prices,
+    refresh_cache as refresh_price_cache,
+    calculate_stay,
+    price_calendar,
+)
 from .models import House, BookingRequest
 from .retry_job import retry_failed_forwards
 from .schemas import HouseOut, BookingRequestCreate, BookingRequestOut
@@ -55,10 +61,13 @@ async def lifespan(app):
     finally:
         db.close()
 
+    await refresh_price_cache()
+
     scheduler = AsyncIOScheduler()
     scheduler.add_job(retry_failed_forwards, "interval", seconds=300, id="retry_forwards")
+    scheduler.add_job(refresh_price_cache, "interval", seconds=300, id="refresh_prices")
     scheduler.start()
-    logger.info("retry_forwards job scheduled (every 300s)")
+    logger.info("jobs scheduled: retry_forwards, refresh_prices (every 300s)")
 
     yield
 
@@ -77,9 +86,44 @@ async def health():
 
 @app.get("/houses", response_model=list[HouseOut])
 @limiter.limit("30/minute")
-def list_houses(request: Request, db: Session = Depends(get_db)):
+async def list_houses(request: Request, db: Session = Depends(get_db)):
     stmt = select(House).order_by(House.id)
-    return list(db.execute(stmt).scalars().all())
+    houses = list(db.execute(stmt).scalars().all())
+
+    easycamp = {h["id"]: h for h in await get_houses_with_prices()}
+
+    result = []
+    for h in houses:
+        data = HouseOut.model_validate(h)
+        ec = easycamp.get(h.id)
+        if ec:
+            data.current_price = ec.get("current_price")
+            data.base_price = ec.get("base_price", h.base_price)
+            data.discount_percent = ec.get("discount_percent", 0)
+            data.discount_label = ec.get("discount_label")
+            data.season_label = ec.get("season_label")
+        else:
+            data.current_price = h.base_price
+        result.append(data)
+    return result
+
+
+@app.get("/houses/{house_id}/calculate")
+@limiter.limit("30/minute")
+async def house_calculate(request: Request, house_id: int, check_in: str, check_out: str):
+    """Расчёт стоимости проживания (прокси к EasyCamp PricingService)."""
+    result = await calculate_stay(house_id, check_in, check_out)
+    if result is None:
+        raise HTTPException(status_code=503, detail="Pricing service unavailable")
+    return result
+
+
+@app.get("/houses/{house_id}/prices")
+@limiter.limit("30/minute")
+async def house_prices(request: Request, house_id: int, days: int = 30):
+    """Прайс-календарь по дням (прокси к EasyCamp PricingService)."""
+    result = await price_calendar(house_id, min(days, 365))
+    return result
 
 
 @app.post("/booking-requests", response_model=BookingRequestOut)
