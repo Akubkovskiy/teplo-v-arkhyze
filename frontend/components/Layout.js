@@ -61,7 +61,12 @@ export default function Layout({ title, description, children }) {
         </main>
 
         <footer className="site-footer">
-          <div className="container">© {new Date().getFullYear()} База отдыха «Тепло», Архыз</div>
+          <div className="container">
+            <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+              <span>© {new Date().getFullYear()} База отдыха «Тепло», Архыз</span>
+              <Link href="/rules" style={{ color: "#94a3b8", fontSize: 14 }}>Правила и условия</Link>
+            </div>
+          </div>
         </footer>
       </div>
     </>
