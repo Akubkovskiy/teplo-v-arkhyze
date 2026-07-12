@@ -54,8 +54,10 @@ def _insert_failed_request(Session, *, retry_count=0, hours_ago=1):
 @pytest.mark.asyncio
 async def test_retry_succeeds(db_session, monkeypatch):
     req_id = _insert_failed_request(db_session)
+    captured = {}
 
     async def fake_forward(payload):
+        captured["payload"] = payload
         return easycamp_forward.ForwardResult(status="ok", booking_id=99)
 
     monkeypatch.setattr(retry_module, "forward_lead", fake_forward)
@@ -66,6 +68,7 @@ async def test_retry_succeeds(db_session, monkeypatch):
         req = s.get(BookingRequest, req_id)
         assert req.forwarded_status == "ok"
         assert req.easycamp_booking_id == 99
+    assert captured["payload"]["house_id"] == 1
 
 
 @pytest.mark.asyncio

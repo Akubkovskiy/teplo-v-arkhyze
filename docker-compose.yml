@@ -21,12 +21,12 @@ services:
   api:
     image: python:3.12-slim
     working_dir: /app
-    command: sh -c "pip install -r requirements.txt && alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload"
+    command: sh -c "pip install -r requirements.txt && alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8001"
     volumes:
       - ./api:/app
     environment:
       - DATABASE_URL=${DATABASE_URL:-postgresql+psycopg://teplo:teplo@db:5432/teplo}
-      - APP_ENV=dev
+      - APP_ENV=production
       - EASYCAMP_LEAD_URL=${EASYCAMP_LEAD_URL:-}
       - EASYCAMP_LEAD_TOKEN=${EASYCAMP_LEAD_TOKEN:-}
       - EASYCAMP_LEAD_TIMEOUT_SECONDS=${EASYCAMP_LEAD_TIMEOUT_SECONDS:-5}

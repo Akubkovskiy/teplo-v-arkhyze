@@ -37,7 +37,16 @@ class BookingRequestCreate(BaseModel):
         return v
 
 
+class BookingRequestReceipt(BaseModel):
+    """Public acknowledgement without stored guest PII or internal forwarding state."""
+
+    id: int
+    status: str
+
+
 class BookingRequestOut(BaseModel):
+    """Internal representation. Must not be used by unauthenticated routes."""
+
     id: int
     house_id: int | None
     guest_name: str

@@ -15,7 +15,7 @@ from sqlalchemy.pool import StaticPool
 from app import easycamp_forward, main as main_module
 from app.database import Base, get_db
 from app.models import BookingRequest, House
-from app.schemas import BookingRequestCreate, BookingRequestOut
+from app.schemas import BookingRequestCreate, BookingRequestReceipt
 
 
 def _build_test_app():
@@ -24,7 +24,7 @@ def _build_test_app():
     app.state.limiter = limiter
     app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-    @app.post("/booking-requests", response_model=BookingRequestOut)
+    @app.post("/booking-requests", response_model=BookingRequestReceipt)
     @limiter.limit("100/minute")
     async def _route(
         request: Request, payload: BookingRequestCreate, db: OrmSession = Depends(get_db)
@@ -102,9 +102,8 @@ async def test_create_lead_when_forward_disabled(client, db_session, monkeypatch
     response = client.post("/booking-requests", json=_payload())
     assert response.status_code == 200, response.text
     data = response.json()
-    assert data["status"] == "new"
-    assert data["forwarded_status"] == "disabled"
-    assert data["easycamp_booking_id"] is None
+    assert data["status"] == "accepted"
+    assert set(data) == {"id", "status"}
 
     with db_session() as s:
         row = s.query(BookingRequest).first()
@@ -130,8 +129,8 @@ async def test_create_lead_with_successful_forward(client, db_session, monkeypat
     response = client.post("/booking-requests", json=_payload())
     assert response.status_code == 200, response.text
     data = response.json()
-    assert data["forwarded_status"] == "ok"
-    assert data["easycamp_booking_id"] == 42
+    assert data["status"] == "accepted"
+    assert set(data) == {"id", "status"}
 
     assert captured["payload"]["house_name"] == "Forest 34м²"
     assert captured["payload"]["external_ref"] == str(data["id"])
@@ -155,8 +154,8 @@ async def test_forward_failure_does_not_fail_the_request(client, db_session, mon
     response = client.post("/booking-requests", json=_payload())
     assert response.status_code == 200, response.text
     data = response.json()
-    assert data["status"] == "new"
-    assert data["forwarded_status"] == "error"
+    assert data["status"] == "accepted"
+    assert set(data) == {"id", "status"}
 
     with db_session() as s:
         row = s.query(BookingRequest).first()
@@ -186,3 +185,14 @@ def test_honeypot_discards_submission(client, db_session, monkeypatch):
 
     with db_session() as s:
         assert s.query(BookingRequest).count() == 0
+
+
+def test_public_api_has_no_booking_request_read_route():
+    exposed_methods = {
+        method
+        for route in main_module.app.routes
+        if route.path == "/booking-requests/{request_id}"
+        for method in route.methods
+    }
+
+    assert "GET" not in exposed_methods

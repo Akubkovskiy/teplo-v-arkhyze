@@ -20,7 +20,7 @@ from .easycamp_prices import (
 )
 from .models import House, BookingRequest
 from .retry_job import retry_failed_forwards
-from .schemas import HouseOut, BookingRequestCreate, BookingRequestOut
+from .schemas import HouseOut, BookingRequestCreate, BookingRequestReceipt
 
 logger = logging.getLogger(__name__)
 limiter = Limiter(key_func=get_remote_address)
@@ -126,7 +126,7 @@ async def house_prices(request: Request, house_id: int, days: int = 30):
     return result
 
 
-@app.post("/booking-requests", response_model=BookingRequestOut)
+@app.post("/booking-requests", response_model=BookingRequestReceipt)
 @limiter.limit("5/minute")
 async def create_booking_request(
     request: Request, payload: BookingRequestCreate, db: Session = Depends(get_db)
@@ -134,13 +134,7 @@ async def create_booking_request(
     """Создаёт локальный лид + best-effort forward в EasyCamp."""
     if payload.website:
         logger.info("honeypot triggered, discarding submission")
-        return BookingRequestOut(
-            id=0, house_id=payload.house_id, guest_name=payload.guest_name,
-            guest_phone=payload.guest_phone, guest_comment=payload.guest_comment,
-            check_in=payload.check_in, check_out=payload.check_out,
-            guests_count=payload.guests_count, status="new", source="website",
-            created_at=datetime.utcnow(),
-        )
+        return BookingRequestReceipt(id=0, status="accepted")
 
     house: House | None = None
     if payload.house_id:
@@ -189,12 +183,4 @@ async def create_booking_request(
     db.commit()
     db.refresh(req)
 
-    return req
-
-
-@app.get("/booking-requests/{request_id}", response_model=BookingRequestOut)
-def get_booking_request(request_id: int, db: Session = Depends(get_db)):
-    req = db.get(BookingRequest, request_id)
-    if not req:
-        raise HTTPException(status_code=404, detail="Booking request not found")
-    return req
+    return BookingRequestReceipt(id=req.id, status="accepted")
