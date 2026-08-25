@@ -35,7 +35,7 @@ const FAQ_SCHEMA = JSON.stringify({
 const HOUSE_FALLBACKS = [
   {
     id: 1,
-    name: "Домик в лесу",
+    name: "Домик в лесу · №1",
     size: "34 м²",
     capacity: 4,
     price: 4675,
@@ -53,12 +53,12 @@ const HOUSE_FALLBACKS = [
   },
   {
     id: 3,
-    name: "Компактный домик",
-    size: "32 м²",
-    capacity: 3,
+    name: "Домик в лесу · №3",
+    size: "34 м²",
+    capacity: 4,
     price: 4675,
     image: "/images/interior-bath-1.jpg",
-    description: "Спокойный вариант для пары или небольшой компании до трёх гостей.",
+    description: "Та же планировка и вместимость, что у первого домика: до четырёх гостей.",
   },
 ];
 

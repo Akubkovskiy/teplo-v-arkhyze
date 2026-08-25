@@ -7,12 +7,19 @@ import cfg from "../site.config";
 import { captureUtm, getStoredUtm, trackEvent } from "../lib/analytics";
 
 const FALLBACK_HOUSES = [
-  { id: 1, name: "Домик в лесу 34 м²", capacity: 4, base_price: 5500 },
+  { id: 1, name: "Домик в лесу 34 м² · №1", capacity: 4, base_price: 5500 },
   { id: 2, name: "Семейный домик 40 м²", capacity: 6, base_price: 7500 },
-  { id: 3, name: "Компактный домик 32 м²", capacity: 3, base_price: 4500 },
+  { id: 3, name: "Домик в лесу 34 м² · №3", capacity: 4, base_price: 4500 },
 ];
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "/api";
+
+function displayHouseName(house) {
+  if (house && (house.id === 1 || house.id === 3)) {
+    return `Домик в лесу 34 м² · №${house.id}`;
+  }
+  return house?.name || "Домик";
+}
 
 function normalizePhone(raw) {
   return (raw || "").replace(/[\s\-()]/g, "");
@@ -247,7 +254,7 @@ export default function BookingPage() {
               нам в Telegram.
             </p>
           ) : null}
-          <p>Домик: <b>{h.name}</b></p>
+          <p>Домик: <b>{displayHouseName(h)}</b></p>
           <p>Даты: <b>{form.check_in} — {form.check_out}</b></p>
           {priceCalc && (
             <p>Стоимость: <b>{formatPrice(priceCalc.total)} ₽</b> ({priceCalc.nights} {priceCalc.nights === 1 ? "ночь" : priceCalc.nights < 5 ? "ночи" : "ночей"})</p>
@@ -308,7 +315,7 @@ export default function BookingPage() {
           >
             {houses.map((h) => (
               <option key={h.id} value={h.id}>
-                {h.name}
+                {displayHouseName(h)}
                 {h.current_price ? ` · от ${formatPrice(h.current_price)} ₽/сутки` : ""}
               </option>
             ))}

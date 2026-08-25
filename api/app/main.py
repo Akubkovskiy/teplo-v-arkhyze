@@ -48,11 +48,11 @@ async def lifespan(app):
                 short_description="Две спальни, зона отдыха и тихая локация рядом с Архызом.",
             ),
             House(
-                name="Компактный домик 32м²",
+                name="Домик в лесу 34м²",
                 slug="compact-32",
-                capacity=3,
+                capacity=4,
                 base_price=4500,
-                short_description="Уютный домик для двоих-троих с видом на лес и горы.",
+                short_description="Уютный домик в лесу с верандой и видом на горы.",
             ),
         ]
         existing_slugs = {s for (s,) in db.query(House.slug).all()}
