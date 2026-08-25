@@ -76,11 +76,13 @@ a { color: #d6a06a; text-decoration: none; }
 .home-hero-facts div { display: grid; gap: 4px; }
 .home-hero-facts dt { color: #fffaf3; font-size: 18px; font-weight: 800; }
 .home-hero-facts dd { margin: 0; color: #d8d5cd; font-size: 13px; }
-.home-booking-bar { background: #d7a36b; color: #20221d; border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+.home-booking-bar { background: #20251f; color: #f3efe8; border: 1px solid rgba(215,194,164,.2); border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
 .home-booking-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 18px; padding-bottom: 18px; }
 .home-booking-bar-inner div { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-.home-booking-bar strong { font-size: 17px; }
-.home-booking-bar span { color: #514231; font-size: 14px; }
+.home-booking-bar strong { color: #f8f3eb; font-size: 17px; }
+.home-booking-bar span { color: #aaa99f; font-size: 14px; }
+.home-booking-bar .btn-dark { background: #c87535; color: #fff; transform: translateY(-2px); }
+.home-booking-bar .btn-dark:hover { background: #de9455; }
 .home-section { padding: 68px 0; border-bottom: 1px solid rgba(215,194,164,.16); margin-bottom: 14px; }
 .home-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
 .home-section-heading h2, .home-detail h2, .home-final-cta h2 { max-width: 650px; margin: 0; color: #f8f3eb; font-family: Georgia, serif; font-size: 40px; line-height: 1.1; font-weight: 500; }
