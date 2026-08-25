@@ -4,11 +4,12 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 import cfg from "../site.config";
+import { captureUtm, getStoredUtm, trackEvent } from "../lib/analytics";
 
 const FALLBACK_HOUSES = [
-  { id: 1, name: "Домик в лесу 34 м²" },
-  { id: 2, name: "Семейный домик 40 м²" },
-  { id: 3, name: "Компактный домик 32 м²" },
+  { id: 1, name: "Домик в лесу 34 м²", capacity: 4, base_price: 5500 },
+  { id: 2, name: "Семейный домик 40 м²", capacity: 6, base_price: 7500 },
+  { id: 3, name: "Компактный домик 32 м²", capacity: 3, base_price: 4500 },
 ];
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "/api";
@@ -23,6 +24,25 @@ function formatPrice(n) {
 
 function todayStr() {
   return new Date().toISOString().slice(0, 10);
+}
+
+function nextDate(value) {
+  const date = new Date(`${value}T00:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + 1);
+  return date.toISOString().slice(0, 10);
+}
+
+function getStayAvailability(entries, checkIn, checkOut) {
+  if (!checkIn || !checkOut || checkOut <= checkIn || !entries.length) return null;
+  const byDate = new Map(entries.map((entry) => [String(entry.date).slice(0, 10), entry]));
+  let date = checkIn;
+  while (date < checkOut) {
+    const entry = byDate.get(date);
+    if (!entry) return null;
+    if (entry.available === false) return false;
+    date = nextDate(date);
+  }
+  return true;
 }
 
 export default function BookingPage() {
@@ -43,10 +63,13 @@ export default function BookingPage() {
   const [utm, setUtm] = useState({});
   const [sent, setSent] = useState(false);
   const [leadId, setLeadId] = useState(null);
+  const [leadStatus, setLeadStatus] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [priceCalc, setPriceCalc] = useState(null);
   const [priceLoading, setPriceLoading] = useState(false);
+  const [availability, setAvailability] = useState([]);
+  const [availabilityStatus, setAvailabilityStatus] = useState("idle");
 
   useEffect(() => {
     fetch(`${API_BASE}/houses`)
@@ -58,6 +81,26 @@ export default function BookingPage() {
   }, []);
 
   useEffect(() => {
+    let cancelled = false;
+    setAvailability([]);
+    setAvailabilityStatus("loading");
+    fetch(`${API_BASE}/houses/${form.house}/availability?days=365`)
+      .then((r) => {
+        if (!r.ok) throw new Error("availability unavailable");
+        return r.json();
+      })
+      .then((data) => {
+        if (cancelled) return;
+        setAvailability(Array.isArray(data) ? data : []);
+        setAvailabilityStatus(Array.isArray(data) ? "ready" : "error");
+      })
+      .catch(() => {
+        if (!cancelled) setAvailabilityStatus("error");
+      });
+    return () => { cancelled = true; };
+  }, [form.house]);
+
+  useEffect(() => {
     if (!router.isReady) return;
     const q = router.query;
     if (q.house) setForm((f) => ({ ...f, house: Number(q.house) || 1 }));
@@ -66,7 +109,7 @@ export default function BookingPage() {
     for (const k of keys) {
       if (q[k]) found[k] = String(q[k]);
     }
-    if (Object.keys(found).length) setUtm(found);
+    setUtm({ ...getStoredUtm(), ...captureUtm(found) });
   }, [router.isReady]);
 
   const fetchPrice = useCallback(async (houseId, checkIn, checkOut) => {
@@ -95,6 +138,9 @@ export default function BookingPage() {
     fetchPrice(form.house, form.check_in, form.check_out);
   }, [form.house, form.check_in, form.check_out, fetchPrice]);
 
+  const selectedHouse = houses.find((x) => x.id === form.house) || houses[0];
+  const stayAvailability = getStayAvailability(availability, form.check_in, form.check_out);
+
   async function submit(e) {
     e.preventDefault();
     setError("");
@@ -107,6 +153,16 @@ export default function BookingPage() {
 
     if (form.check_in && form.check_out && form.check_out <= form.check_in) {
       setError("Дата выезда должна быть позже даты заезда.");
+      return;
+    }
+
+    if (availabilityStatus === "loading" || stayAvailability === null) {
+      setError("Подождите проверку доступности дат или напишите администратору в Telegram.");
+      return;
+    }
+
+    if (stayAvailability === false) {
+      setError("Некоторые выбранные даты уже заняты. Выберите другой период.");
       return;
     }
 
@@ -163,6 +219,8 @@ export default function BookingPage() {
 
       const data = await res.json();
       setLeadId(data && data.id ? data.id : null);
+      setLeadStatus(data && data.status ? data.status : "accepted");
+      trackEvent("booking_request_sent", { status: data && data.status ? data.status : "accepted" });
       setSent(true);
     } catch (err) {
       setError(
@@ -175,13 +233,14 @@ export default function BookingPage() {
 
   if (sent) {
     const h = houses.find((x) => x.id === form.house) || houses[0];
+    const pending = leadStatus === "pending";
     return (
       <Layout
         title="Бронирование"
         description="Забронируйте домик на базе «Тепло» в Архызе. Домики в лесу, тишина и природа. Выберите даты — ответим в течение 30 минут."
       >
         <AnimatedSection className="card">
-          <h2 style={{ marginTop: 0 }}>Спасибо за заявку!</h2>
+          <h2 style={{ marginTop: 0 }}>{pending ? "Заявка сохранена" : "Заявка принята"}</h2>
           {leadId ? (
             <p>
               Номер заявки: <b>#{leadId}</b>. Сохраните его — пригодится, если будете писать
@@ -193,7 +252,11 @@ export default function BookingPage() {
           {priceCalc && (
             <p>Стоимость: <b>{formatPrice(priceCalc.total)} ₽</b> ({priceCalc.nights} {priceCalc.nights === 1 ? "ночь" : priceCalc.nights < 5 ? "ночи" : "ночей"})</p>
           )}
-          <p>Мы свяжемся с вами в течение 10–30 минут в рабочее время для подтверждения.</p>
+          <p>
+            {pending
+              ? "Заявка сохранена, но сервис бронирования временно не ответил. Мы проверим даты вручную и свяжемся с вами в течение 10–30 минут."
+              : "Мы получили заявку и свяжемся с вами в течение 10–30 минут в рабочее время для подтверждения."}
+          </p>
           <p>Если хотите ускорить — напишите нам напрямую:</p>
           <div className="hero-actions">
             <a className="btn-primary" href={`${cfg.botUrl}?start=booking`} target="_blank" rel="noreferrer">
@@ -208,33 +271,15 @@ export default function BookingPage() {
     );
   }
 
-  const selectedHouse = houses.find((x) => x.id === form.house);
-
   return (
     <Layout
       title="Бронирование"
       description="Забронируйте домик на базе «Тепло» в Архызе. Домики в лесу, тишина и природа. Выберите даты — ответим в течение 30 минут."
     >
       <AnimatedSection className="card" style={{ marginBottom: 14 }}>
-        <h2 style={{ marginTop: 0 }}>Как забронировать</h2>
-        <div className="grid2" style={{ gap: 10 }}>
-          <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-            <span style={{ fontSize: 24, lineHeight: 1, flexShrink: 0, opacity: 0.5 }}>1</span>
-            <div><b>Заявка</b><p style={{ margin: "4px 0 0", fontSize: "0.9em", opacity: 0.85 }}>Заполните форму ниже или напишите в Telegram-бот. Укажите даты и домик.</p></div>
-          </div>
-          <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-            <span style={{ fontSize: 24, lineHeight: 1, flexShrink: 0, opacity: 0.5 }}>2</span>
-            <div><b>Подтверждение</b><p style={{ margin: "4px 0 0", fontSize: "0.9em", opacity: 0.85 }}>Ответим в течение 10–30 минут. Подтвердим доступность и итоговую стоимость.</p></div>
-          </div>
-          <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-            <span style={{ fontSize: 24, lineHeight: 1, flexShrink: 0, opacity: 0.5 }}>3</span>
-            <div><b>Предоплата</b><p style={{ margin: "4px 0 0", fontSize: "0.9em", opacity: 0.85 }}>Переводом по реквизитам. Бронь фиксируется после внесения предоплаты.</p></div>
-          </div>
-          <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-            <span style={{ fontSize: 24, lineHeight: 1, flexShrink: 0, opacity: 0.5 }}>4</span>
-            <div><b>Заезд</b><p style={{ margin: "4px 0 0", fontSize: "0.9em", opacity: 0.85 }}>Отправим координаты и схему подъезда. Заезд с 14:00, выезд до 12:00.</p></div>
-          </div>
-        </div>
+        <h2 style={{ marginTop: 0 }}>Выберите домик и даты</h2>
+        <p style={{ marginBottom: 8 }}>После заявки проверим доступность и итоговую стоимость, затем ответим в течение 10–30 минут в рабочее время.</p>
+        <p style={{ margin: 0, fontSize: "0.9em", opacity: 0.8 }}>Бронь фиксируется после подтверждения и предоплаты. Заезд с 14:00, выезд до 12:00.</p>
         <p style={{ fontSize: "0.85em", opacity: 0.6, marginBottom: 0, marginTop: 10 }}>
           <Link href="/rules" style={{ color: "#93c5fd" }}>Правила и условия бронирования</Link>
         </p>
@@ -245,14 +290,20 @@ export default function BookingPage() {
           Оставьте заявку — подтвердим доступность и свяжемся с вами.
           Обычно отвечаем в течение 10–30 минут в рабочее время.
         </p>
-        <div className="booking-banner">
-          <img src="/images/hero-mountains-3.jpg" alt="Вид на горы рядом с базой" />
-        </div>
         <form onSubmit={submit}>
-          <label>Домик</label>
+          <label htmlFor="booking-house">Домик</label>
           <select
+            id="booking-house"
             value={form.house}
-            onChange={(e) => setForm({ ...form, house: Number(e.target.value) })}
+            onChange={(e) => {
+              const houseId = Number(e.target.value);
+              const house = houses.find((item) => item.id === houseId);
+              setForm({
+                ...form,
+                house: houseId,
+                guests_count: Math.min(Number(form.guests_count) || 2, house?.capacity || 20),
+              });
+            }}
             disabled={loading}
           >
             {houses.map((h) => (
@@ -267,8 +318,9 @@ export default function BookingPage() {
               -{selectedHouse.discount_percent}%{selectedHouse.discount_label ? ` ${selectedHouse.discount_label}` : ""}
             </p>
           )}
-          <label>Имя</label>
+          <label htmlFor="booking-name">Имя</label>
           <input
+            id="booking-name"
             required
             autoComplete="name"
             placeholder="Имя и фамилия"
@@ -276,8 +328,11 @@ export default function BookingPage() {
             onChange={(e) => setForm({ ...form, guest_name: e.target.value })}
             disabled={loading}
           />
-          <label>Телефон</label>
+          <label htmlFor="booking-phone">Телефон</label>
           <input
+            id="booking-phone"
+            type="tel"
+            inputMode="tel"
             required
             autoComplete="tel"
             placeholder="+79991234567"
@@ -287,8 +342,9 @@ export default function BookingPage() {
           />
           <div className="grid2">
             <div>
-              <label>Заезд</label>
+              <label htmlFor="booking-check-in">Заезд</label>
               <input
+                id="booking-check-in"
                 type="date"
                 required
                 min={minDate}
@@ -298,8 +354,9 @@ export default function BookingPage() {
               />
             </div>
             <div>
-              <label>Выезд</label>
+              <label htmlFor="booking-check-out">Выезд</label>
               <input
+                id="booking-check-out"
                 type="date"
                 required
                 min={form.check_in || minDate}
@@ -335,17 +392,40 @@ export default function BookingPage() {
             </div>
           )}
 
-          <label>Гостей</label>
+          {availabilityStatus === "loading" && (
+            <p className="availability-status" role="status" aria-live="polite">
+              Проверяем доступность дат…
+            </p>
+          )}
+          {availabilityStatus === "error" && (
+            <p className="availability-status availability-status-warning" role="status" aria-live="polite">
+              Не удалось проверить календарь. Напишите администратору, чтобы подтвердить даты.
+            </p>
+          )}
+          {stayAvailability === true && (
+            <p className="availability-status availability-status-ok" role="status" aria-live="polite">
+              Выбранные даты свободны по текущему календарю.
+            </p>
+          )}
+          {stayAvailability === false && (
+            <p className="availability-status availability-status-warning" role="status" aria-live="polite">
+              Некоторые выбранные даты уже заняты. Выберите другой период.
+            </p>
+          )}
+
+          <label htmlFor="booking-guests">Гостей</label>
           <input
+            id="booking-guests"
             type="number"
             min={1}
-            max={20}
+            max={selectedHouse?.capacity || 20}
             value={form.guests_count}
             onChange={(e) => setForm({ ...form, guests_count: e.target.value })}
             disabled={loading}
           />
-          <label>Комментарий (необязательно)</label>
+          <label htmlFor="booking-comment">Комментарий (необязательно)</label>
           <textarea
+            id="booking-comment"
             rows={3}
             placeholder="Пожелания по размещению, вопросы, особые условия..."
             value={form.comment}
@@ -364,7 +444,7 @@ export default function BookingPage() {
           <button type="submit" disabled={loading}>
             {loading ? "Отправляем…" : "Отправить заявку"}
           </button>
-          {error ? <p style={{ color: "#fca5a5" }}>⚠️ {error}</p> : null}
+          {error ? <p role="alert" style={{ color: "#fca5a5" }}>⚠️ {error}</p> : null}
           <div className="hero-actions" style={{ marginTop: 8 }}>
             <a className="btn-primary" href={`${cfg.botUrl}?start=booking`} target="_blank" rel="noreferrer">
               Перейти в бот бронирования
@@ -374,6 +454,9 @@ export default function BookingPage() {
             </a>
           </div>
         </form>
+        <div className="booking-banner">
+          <img src="/images/hero-mountains-3.jpg" alt="Вид на горы рядом с базой" loading="lazy" />
+        </div>
       </AnimatedSection>
     </Layout>
   );

@@ -30,7 +30,7 @@ def db_session(monkeypatch):
     engine.dispose()
 
 
-def _insert_failed_request(Session, *, retry_count=0, hours_ago=1):
+def _insert_failed_request(Session, *, retry_count=0, hours_ago=1, forwarded_status="error"):
     with Session() as s:
         req = BookingRequest(
             house_id=1,
@@ -43,7 +43,7 @@ def _insert_failed_request(Session, *, retry_count=0, hours_ago=1):
             status="new",
             source="website",
             created_at=datetime.utcnow() - timedelta(hours=hours_ago),
-            forwarded_status="error",
+            forwarded_status=forwarded_status,
             forward_error=f"http 500: down retry#{retry_count}" if retry_count else "http 500: down",
         )
         s.add(req)
@@ -86,6 +86,23 @@ async def test_retry_still_failing(db_session, monkeypatch):
         req = s.get(BookingRequest, req_id)
         assert req.forwarded_status == "error"
         assert "retry#1" in req.forward_error
+
+
+@pytest.mark.asyncio
+async def test_retry_picks_up_disabled_forward(db_session, monkeypatch):
+    req_id = _insert_failed_request(db_session, forwarded_status="disabled")
+
+    async def fake_forward(payload):
+        return easycamp_forward.ForwardResult(status="ok", booking_id=77)
+
+    monkeypatch.setattr(retry_module, "forward_lead", fake_forward)
+
+    await retry_module.retry_failed_forwards()
+
+    with db_session() as s:
+        req = s.get(BookingRequest, req_id)
+        assert req.forwarded_status == "ok"
+        assert req.easycamp_booking_id == 77
 
 
 @pytest.mark.asyncio

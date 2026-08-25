@@ -22,6 +22,7 @@ class ForwardResult:
     status: str  # ok | error | disabled
     booking_id: int | None = None
     error: str | None = None
+    http_status: int | None = None
     raw_response: dict[str, Any] | None = None
 
 
@@ -58,6 +59,7 @@ async def forward_lead(payload: dict[str, Any]) -> ForwardResult:
         return ForwardResult(
             status="error",
             error=f"http {response.status_code}: {response.text[:200]}",
+            http_status=response.status_code,
         )
 
     try:

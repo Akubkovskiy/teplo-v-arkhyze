@@ -3,10 +3,12 @@ import { useEffect, useRef, useState } from "react";
 export default function AnimatedSection({ children, className = "" }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
+  const [motionReady, setMotionReady] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    setMotionReady(true);
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -21,7 +23,7 @@ export default function AnimatedSection({ children, className = "" }) {
   }, []);
 
   return (
-    <section ref={ref} className={`reveal ${visible ? "is-visible" : ""} ${className}`}>
+    <section ref={ref} className={`reveal ${motionReady ? "motion-ready" : ""} ${visible ? "is-visible" : ""} ${className}`}>
       {children}
     </section>
   );

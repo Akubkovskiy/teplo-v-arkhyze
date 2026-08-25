@@ -8,18 +8,24 @@ const HOUSE_META = {
   1: {
     name: "Домик в лесу 34 м²",
     guests: "до 4 гостей (+ доп. место)",
+    capacity: 4,
+    base_price: 5500,
     text: "Уютный домик с открытой верандой и видом на лес. Отдельная спальня, гостиная с кухонным уголком, душ/туалет, горячая вода, Wi‑Fi. Мангальная зона и парковка у домика.",
     img: "/images/house-winter-1.jpg",
   },
   2: {
     name: "Семейный домик 40 м²",
     guests: "до 6 гостей",
+    capacity: 6,
+    base_price: 7500,
     text: "Две отдельные спальни и просторная гостиная с обеденной зоной. Подходит для семьи с детьми или компании. Терраса с видом на лес, горячая вода, Wi‑Fi, парковка.",
     img: "/images/interior-dining-1.jpg",
   },
   3: {
     name: "Компактный домик 32 м²",
-    guests: "до 4 гостей (+ доп. место)",
+    guests: "до 3 гостей",
+    capacity: 3,
+    base_price: 4500,
     text: "Уютный домик с верандой и видом на лес. Отдельная спальня, гостиная с кухонным уголком, душ/туалет, горячая вода, Wi‑Fi. Мангальная зона и парковка у домика.",
     img: "/images/interior-bath-1.jpg",
   },
@@ -55,7 +61,6 @@ export default function HousesPage() {
     Object.entries(HOUSE_META).map(([id, meta]) => ({
       id: Number(id),
       ...meta,
-      base_price: 0,
       current_price: null,
       discount_percent: 0,
       discount_label: null,
@@ -75,6 +80,8 @@ export default function HousesPage() {
               ...h,
               base_price: api.base_price,
               current_price: api.current_price,
+              capacity: api.capacity || h.capacity,
+              guests: `до ${api.capacity || h.capacity} гостей`,
               discount_percent: api.discount_percent || 0,
               discount_label: api.discount_label,
               season_label: api.season_label,
@@ -96,7 +103,7 @@ export default function HousesPage() {
       <AnimatedSection className="grid3" style={{ marginTop: 14 }}>
         {houses.map((h) => (
           <article className="card card-hover" key={h.id}>
-            <img src={h.img} alt={h.name} className="house-thumb" />
+            <img src={h.img} alt={h.name} className="house-thumb" loading="lazy" />
             <h3 style={{ marginTop: 12 }}>{h.name}</h3>
             <p>{h.text}</p>
             <p>👥 {h.guests}</p>
@@ -129,12 +136,12 @@ export default function HousesPage() {
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
         <h3 style={{ marginTop: 0 }}>Галерея домиков</h3>
         <div className="photo-strip" style={{ marginTop: 10 }}>
-          <img src="/images/house-winter-1.jpg" alt="Домик зимой" />
-          <img src="/images/interior-dining-1.jpg" alt="Гостиная и обеденная зона" />
-          <img src="/images/interior-bath-1.jpg" alt="Санузел" />
-          <img src="/images/hero-mountains-1.jpg" alt="Вид на горы" />
-          <img src="/images/hero-mountains-2.jpg" alt="Атмосфера Архыза" />
-          <img src="/images/hero-mountains-3.jpg" alt="Панорама региона" />
+          <img src="/images/house-winter-1.jpg" alt="Домик зимой" loading="lazy" />
+          <img src="/images/interior-dining-1.jpg" alt="Гостиная и обеденная зона" loading="lazy" />
+          <img src="/images/interior-bath-1.jpg" alt="Санузел" loading="lazy" />
+          <img src="/images/hero-mountains-1.jpg" alt="Вид на горы" loading="lazy" />
+          <img src="/images/hero-mountains-2.jpg" alt="Атмосфера Архыза" loading="lazy" />
+          <img src="/images/hero-mountains-3.jpg" alt="Панорама региона" loading="lazy" />
         </div>
       </AnimatedSection>
     </Layout>

@@ -38,7 +38,7 @@ export default function Home() {
       </Head>
       <AnimatedSection className="hero card hero-mountain">
         <div className="hero-media">
-          <img src="/images/hero-mountains-1.jpg" alt="Горы Архыза" />
+          <img src="/images/house-winter-1.jpg" alt="Домик базы «Тепло» зимой" />
         </div>
         <h1>База отдыха «Тепло» в Архызе</h1>
         <p>
@@ -63,9 +63,9 @@ export default function Home() {
           Утренний воздух, хвойный лес, тишина и горные виды — то, за чем возвращаются снова.
         </p>
         <div className="photo-strip" style={{marginTop:10}}>
-          <img src="/images/hero-mountains-2.jpg" alt="Панорама гор" />
-          <img src="/images/house-winter-1.jpg" alt="Домик базы" />
-          <img src="/images/interior-dining-1.jpg" alt="Интерьер домика" />
+          <img src="/images/hero-mountains-2.jpg" alt="Панорама гор" loading="lazy" />
+          <img src="/images/house-winter-1.jpg" alt="Домик базы" loading="lazy" />
+          <img src="/images/interior-dining-1.jpg" alt="Интерьер домика" loading="lazy" />
         </div>
       </AnimatedSection>
 

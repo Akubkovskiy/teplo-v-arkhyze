@@ -23,7 +23,7 @@ export default function ActivitiesPage() {
       <AnimatedSection className="grid2" style={{ marginTop: 14 }}>
         {items.map(([title, text, img]) => (
           <article className="card card-hover" key={title}>
-            <img src={img} alt={title} className="house-thumb" />
+            <img src={img} alt={title} className="house-thumb" loading="lazy" />
             <h3 style={{ marginTop: 12 }}>{title}</h3>
             <p>{text}</p>
           </article>

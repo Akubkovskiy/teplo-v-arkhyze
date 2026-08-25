@@ -31,6 +31,10 @@ def _build_test_app():
     ):
         return await main_module.create_booking_request(request, payload, db)
 
+    @app.get("/houses/{house_id}/availability")
+    async def _availability_route(request: Request, house_id: int, days: int = 90):
+        return await main_module.house_availability(request, house_id, days)
+
     return app
 
 
@@ -100,9 +104,9 @@ async def test_create_lead_when_forward_disabled(client, db_session, monkeypatch
     monkeypatch.setattr(main_module, "forward_lead", fake_forward)
 
     response = client.post("/booking-requests", json=_payload())
-    assert response.status_code == 200, response.text
+    assert response.status_code == 202, response.text
     data = response.json()
-    assert data["status"] == "accepted"
+    assert data["status"] == "pending"
     assert set(data) == {"id", "status"}
 
     with db_session() as s:
@@ -152,15 +156,48 @@ async def test_forward_failure_does_not_fail_the_request(client, db_session, mon
     monkeypatch.setattr(main_module, "forward_lead", fake_forward)
 
     response = client.post("/booking-requests", json=_payload())
-    assert response.status_code == 200, response.text
+    assert response.status_code == 202, response.text
     data = response.json()
-    assert data["status"] == "accepted"
+    assert data["status"] == "pending"
     assert set(data) == {"id", "status"}
 
     with db_session() as s:
         row = s.query(BookingRequest).first()
         assert row.forwarded_status == "error"
         assert "http 500" in (row.forward_error or "")
+
+
+@pytest.mark.asyncio
+async def test_booking_conflict_is_reported_as_conflict(client, db_session, monkeypatch):
+    async def fake_forward(payload):
+        return easycamp_forward.ForwardResult(
+            status="error",
+            error="http 409: dates are not available",
+            http_status=409,
+        )
+
+    monkeypatch.setattr(main_module, "forward_lead", fake_forward)
+
+    response = client.post("/booking-requests", json=_payload())
+    assert response.status_code == 409, response.text
+    assert "заняты" in response.json()["detail"]
+
+    with db_session() as s:
+        row = s.query(BookingRequest).first()
+        assert row.forwarded_status == "conflict"
+
+
+def test_availability_route_returns_source_calendar(client, monkeypatch):
+    async def fake_availability(house_id, days):
+        assert house_id == 1
+        assert days == 365
+        return [{"date": "2026-09-01", "available": True}]
+
+    monkeypatch.setattr(main_module, "availability_calendar", fake_availability)
+
+    response = client.get("/houses/1/availability?days=999")
+    assert response.status_code == 200, response.text
+    assert response.json()[0]["available"] is True
 
 
 def test_unknown_house_id_returns_404(client):

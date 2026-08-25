@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import cfg from "../site.config";
 
 const SITE_NAME = "Тепло — база отдыха в Архызе";
@@ -50,6 +51,7 @@ const navItems = [
 
 export default function Layout({ title, description, children }) {
   const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
   const pageDesc = description || DEFAULT_DESC;
   const canonicalUrl = `${SITE_URL}${router.asPath === "/" ? "" : router.asPath}`.split("?")[0];
@@ -68,28 +70,49 @@ export default function Layout({ title, description, children }) {
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDesc} />
         <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="ru_RU" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
         {/* Preload hero images */}
-        <link rel="preload" as="image" href="/images/hero-mountains-1.jpg" />
+        <link rel="preload" as="image" href="/images/house-winter-1.jpg" />
 
         {/* Schema.org structured data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: SCHEMA_LD }} />
       </Head>
 
       <div className="site-wrap">
+        <a className="skip-link" href="#main-content">Перейти к содержанию</a>
         <header className="site-header">
           <div className="container row between center">
             <Link href="/" className="brand">Тепло · Архыз</Link>
-            <nav className="nav">
+            <div className="header-actions">
+              <button
+                type="button"
+                className="menu-toggle"
+                aria-expanded={menuOpen}
+                aria-controls="site-nav"
+                onClick={() => setMenuOpen((open) => !open)}
+              >
+                <span aria-hidden="true">☰</span> Меню
+              </button>
+              <Link href="/booking" className="mobile-booking-cta" onClick={() => setMenuOpen(false)}>
+                Забронировать
+              </Link>
+            </div>
+            <nav id="site-nav" className={`nav ${menuOpen ? "is-open" : ""}`} aria-label="Основная навигация">
               {navItems.map(([href, label]) => (
-                <Link key={href} href={href} className="nav-link">{label}</Link>
+                <Link key={href} href={href} className="nav-link" onClick={() => setMenuOpen(false)}>{label}</Link>
               ))}
             </nav>
           </div>
         </header>
 
-        <main className="container">
+        <main id="main-content" className="container">
           {title ? <h1 className="page-title">{title}</h1> : null}
           {children}
         </main>

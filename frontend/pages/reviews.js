@@ -2,65 +2,30 @@ import Layout from "../components/Layout";
 import AnimatedSection from "../components/AnimatedSection";
 import cfg from "../site.config";
 
-const reviews = [
-  {
-    text: "Уютно, тихо, чисто. Очень красивый вид и приятная атмосфера.",
-    who: "Гости из Ростова",
-    source: "Яндекс Путешествия",
-  },
-  {
-    text: "Отдыхали семьёй — комфортно, тепло и всё необходимое в домике есть.",
-    who: "Семья с детьми",
-    source: "Яндекс Путешествия",
-  },
-  {
-    text: "Понравилось расположение: лес, горы и ощущение уединения.",
-    who: "Пара, выходные",
-    source: "Яндекс Путешествия",
-  },
-  {
-    text: "Хороший интернет, удобная парковка и классная мангальная зона.",
-    who: "Компания друзей",
-    source: "Яндекс Путешествия",
-  },
-  {
-    text: "Заселение прошло быстро, домик тёплый, вечером особенно красиво с подсветкой.",
-    who: "Гости, зимний заезд",
-    source: "Яндекс Путешествия",
-  },
-  {
-    text: "Удобная база для выездов по Архызу: днём активности, вечером спокойный отдых.",
-    who: "Пара, 3 дня",
-    source: "Яндекс Путешествия",
-  },
-];
-
 export default function ReviewsPage() {
   return (
     <Layout title="Отзывы гостей" description="Отзывы гостей базы отдыха «Тепло» в Архызе. Реальные впечатления о домиках, природе и сервисе.">
       <AnimatedSection className="card">
         <p style={{ margin: 0 }}>
-          Ниже — реальные впечатления гостей о тишине, чистоте, видах и атмосфере базы «Тепло».
-          Мы регулярно обновляем сервис по отзывам после каждого заезда.
+          Мы собираем реальные впечатления гостей после каждого заезда. Пока отзывы не перенесены
+          на сайт, их можно посмотреть и оставить на Яндекс.Картах.
         </p>
       </AnimatedSection>
 
-      <AnimatedSection className="reviews-grid" style={{ marginTop: 14 }}>
-        {reviews.map((r, i) => (
-          <article key={i} className="card card-hover review-card">
-            <p>“{r.text}”</p>
-            <small>{r.who}</small>
-            <small style={{ display: "block", opacity: 0.75, marginTop: 4 }}>Источник: {r.source}</small>
-          </article>
-        ))}
+      <AnimatedSection className="card" style={{ marginTop: 14 }}>
+        <h2 style={{ marginTop: 0 }}>Отзывы на Яндекс.Картах</h2>
+        <p>Откройте карточку базы, чтобы увидеть актуальные оценки и комментарии гостей.</p>
+        <div className="hero-actions">
+          <a className="btn-primary" href={cfg.yandexReviewsUrl} target="_blank" rel="noreferrer">Смотреть отзывы</a>
+        </div>
       </AnimatedSection>
 
       <AnimatedSection className="card" style={{ marginTop: 14 }}>
         <h3 style={{ marginTop: 0 }}>Фото атмосферы</h3>
         <div className="photo-strip">
-          <img src="/images/hero-mountains-2.jpg" alt="Горы Архыза" />
-          <img src="/images/house-winter-1.jpg" alt="Домик зимой" />
-          <img src="/images/interior-dining-1.jpg" alt="Интерьер домика" />
+          <img src="/images/hero-mountains-2.jpg" alt="Горы Архыза" loading="lazy" />
+          <img src="/images/house-winter-1.jpg" alt="Домик зимой" loading="lazy" />
+          <img src="/images/interior-dining-1.jpg" alt="Интерьер домика" loading="lazy" />
         </div>
       </AnimatedSection>
 

@@ -101,3 +101,27 @@ async def price_calendar(house_id: int, days: int = 30) -> list[dict]:
     except Exception as e:
         logger.warning(f"easycamp_prices.price_calendar failed: {e}")
     return []
+
+
+async def availability_calendar(house_id: int, days: int = 90) -> list[dict] | None:
+    """Return EasyCamp's per-day availability, or None when the source is down."""
+    base = _api_base()
+    if not base:
+        return None
+    try:
+        async with httpx.AsyncClient(timeout=5) as client:
+            r = await client.get(
+                f"{base}/api/houses/{house_id}/availability",
+                params={"days": days},
+            )
+        if r.status_code == 200:
+            data = r.json()
+            return data if isinstance(data, list) else None
+        logger.warning(
+            "easycamp_prices.availability_calendar got %s for house %s",
+            r.status_code,
+            house_id,
+        )
+    except Exception as e:
+        logger.warning(f"easycamp_prices.availability_calendar failed: {e}")
+    return None

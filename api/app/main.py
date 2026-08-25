@@ -4,6 +4,7 @@ from datetime import datetime
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from fastapi import FastAPI, Depends, HTTPException, Request
+from fastapi.responses import JSONResponse
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
@@ -17,6 +18,7 @@ from .easycamp_prices import (
     refresh_cache as refresh_price_cache,
     calculate_stay,
     price_calendar,
+    availability_calendar,
 )
 from .models import House, BookingRequest
 from .retry_job import retry_failed_forwards
@@ -126,6 +128,16 @@ async def house_prices(request: Request, house_id: int, days: int = 30):
     return result
 
 
+@app.get("/houses/{house_id}/availability")
+@limiter.limit("30/minute")
+async def house_availability(request: Request, house_id: int, days: int = 90):
+    """Availability calendar from EasyCamp, the booking source of truth."""
+    result = await availability_calendar(house_id, max(1, min(days, 365)))
+    if result is None:
+        raise HTTPException(status_code=503, detail="Availability service unavailable")
+    return result
+
+
 @app.post("/booking-requests", response_model=BookingRequestReceipt)
 @limiter.limit("5/minute")
 async def create_booking_request(
@@ -179,8 +191,23 @@ async def create_booking_request(
     elif result.status == "error":
         req.forward_error = (result.error or "")[:1000]
     else:
-        req.forward_error = None
+        req.forward_error = "EasyCamp forward is disabled; queued for retry"
     db.commit()
     db.refresh(req)
+
+    if result.http_status == 409:
+        req.forwarded_status = "conflict"
+        req.forward_error = "EasyCamp rejected the dates: booking conflict"
+        db.commit()
+        raise HTTPException(
+            status_code=409,
+            detail="Выбранные даты уже заняты. Выберите другие даты.",
+        )
+
+    if result.status in {"error", "disabled"}:
+        return JSONResponse(
+            status_code=202,
+            content={"id": req.id, "status": "pending"},
+        )
 
     return BookingRequestReceipt(id=req.id, status="accepted")

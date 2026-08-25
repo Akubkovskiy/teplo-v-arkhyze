@@ -1,7 +1,7 @@
 """Retry failed booking-request forwards to EasyCamp.
 
 Runs as a periodic job inside the site API process (APScheduler).
-Picks up BookingRequests with forwarded_status='error' created within
+Picks up BookingRequests with forwarded_status='error' or 'disabled' created within
 the last 24 hours, retries the forward, and marks them 'abandoned'
 after MAX_RETRIES failures.
 """
@@ -56,7 +56,7 @@ async def retry_failed_forwards():
         cutoff = datetime.utcnow() - timedelta(hours=LOOKBACK_HOURS)
         stmt = (
             select(BookingRequest)
-            .where(BookingRequest.forwarded_status == "error")
+            .where(BookingRequest.forwarded_status.in_(["error", "disabled"]))
             .where(BookingRequest.created_at >= cutoff)
             .order_by(BookingRequest.id)
         )
@@ -86,7 +86,7 @@ async def retry_failed_forwards():
                 req.forward_error = None
                 logger.info(f"retry_job: BookingRequest#{req.id} forwarded OK on retry#{retry_count}")
             elif result.status == "disabled":
-                pass
+                req.forward_error = f"forward disabled retry#{retry_count}"
             else:
                 req.forward_error = f"{(result.error or '')[:500]} retry#{retry_count}"
                 logger.warning(f"retry_job: BookingRequest#{req.id} still failing: {result.error}")
