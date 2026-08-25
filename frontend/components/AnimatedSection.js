@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function AnimatedSection({ children, className = "" }) {
+export default function AnimatedSection({ children, className = "", style }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   const [motionReady, setMotionReady] = useState(false);
@@ -23,7 +23,7 @@ export default function AnimatedSection({ children, className = "" }) {
   }, []);
 
   return (
-    <section ref={ref} className={`reveal ${motionReady ? "motion-ready" : ""} ${visible ? "is-visible" : ""} ${className}`}>
+    <section ref={ref} style={style} className={`reveal ${motionReady ? "motion-ready" : ""} ${visible ? "is-visible" : ""} ${className}`}>
       {children}
     </section>
   );

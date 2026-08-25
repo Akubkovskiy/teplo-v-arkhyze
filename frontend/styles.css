@@ -40,7 +40,7 @@ a { color: #d6a06a; text-decoration: none; }
 .btn-dark { background: #20251f; color: #fff; }
 .btn-dark:hover { background: #303a2f; }
 .grid3 { margin-top: 16px; display: grid; gap: 14px; grid-template-columns: repeat(3,1fr); }
-.booking-form { max-width: 760px; }
+.booking-form { width: 100%; max-width: none; }
 .booking-banner { margin: 8px 0 14px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(215,194,164,.25); }
 .booking-banner img { width: 100%; display: block; max-height: 260px; object-fit: cover; }
 .house-thumb { width: 100%; border-radius: 6px; max-height: 230px; object-fit: cover; border: 1px solid rgba(215,194,164,.2); }
